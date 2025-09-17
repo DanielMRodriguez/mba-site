@@ -1,0 +1,118 @@
+---
+import Hero from "@/components/Hero.astro";
+import CourseAbout from "@/layouts/components/sections/CourseAbout.astro";
+import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
+import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
+import CourseDetail from "@/layouts/components/sections/CourseDetail.astro";
+import Base from "@/layouts/Base.astro";
+
+const meta_datos = {
+  title: "Brow Design Tint / Henna",
+  meta_title: "Shaped, defined, and beautifully tinted brows in just one session.",
+  description: "Shaped, defined, and beautifully tinted brows in just one session.",
+};
+
+const hero = {
+  title: "Brow Design Tint / Henna",
+  subtitle: "Shaped, defined, and beautifully tinted brows in just one session.",
+  cta: "Book Appointment",
+  cta_link: "/contact",
+  image_banner: "/images/brow-design-tint/brow-design-tint-banner.png",
+};
+
+
+const course_about = {
+  title: "All About Brow Design Tint / Henna",
+  description: "<p class='mb-8'>Brow Design Tint / Henna is the perfect solution for enhancing the shape and color of your brows without committing to a semi-permanent treatment. This service involves mapping and shaping your brows to perfection, then applying a tint or henna dye that stains both the skin and brow hairs for a fuller, more defined look.</p> <p class='mb-8'>Henna is a plant-based option that offers a longer-lasting skin stain compared to regular tint, while also conditioning the brow hairs for improved health and shine. Results last up to 6 weeks depending on your skin type and aftercare.</p>",
+  img: "/images/brow-design-tint/una-mujer-recibiendo.png",
+};
+
+const course_detail = {
+  title: "Brow Tint & Henna Styles",
+  text: "Choose your preferred brow look based on the intensity and duration you want. Both options include professional brow mapping and shaping to perfectly complement your facial features.",
+  card_list: [
+    {
+      title: "Tinted Definition",
+      description:
+      "Hair strokes in the front for a natural beginning, fading into soft shading through the arch and tail. Perfect for those who want a structured yet subtle finish."
+    },
+    {
+      title: "Henna Bold Finish",
+      description:
+        "A richer, longer-lasting stain that deeply tints both the skin and brow hairs, creating a fuller and more sculpted brow appearance."
+    },
+  ],
+  list_title: "How to Prepare for Your Appointment",
+  list_subtitle: "",
+  list_items: [
+    "<span class='color-primary'>✱</span> Avoid using exfoliating products, retinoids, or acids near brows for at least 3 days before.",
+    "<span class='color-primary'>✱</span> No brow makeup or oils on the day of your appointment.",
+    "<span class='color-primary'>✱</span> Do not wax, thread, or tweeze brows for at least 48 hours prior (unless part of the appointment).",
+    "<span class='color-primary'>✱</span> Inform us if you have any allergies to dyes or henna.",
+    "<span class='color-primary'>✱</span> Arrive with clean, makeup-free skin.",
+  ],
+};
+
+const course_banner = {
+  title: "Balanced. Beautiful. Built to Last.",
+  paragraph:
+    "Experience the perfect combination of definition and softness with our Combo Brows. Book your session and enjoy effortlessly flawless brows for months.",
+  cta: "Book Now",
+  cta_link: "/contact",
+  image_banner: "/images/brow-design-tint/una-mujer-recibiendo.png",
+};
+
+
+
+const course_info = {
+  title: "Brow Tint / Henna Aftercare Guide",
+  subtitle:
+    "Proper healing ensures great results. Follow these instructions:",
+  list: [
+    "✱ Avoid getting brows wet for 24 hours after treatment",
+    "✱ Do not scrub or exfoliate the brow area",
+    "✱ Use gentle, sulfate-free cleansers",
+    "✱ Avoid heavy oils or makeup removers directly on brows",
+    "✱ Brush brows daily to keep hairs in shape",
+    "✱ Rebook every 4-6 weeks to maintain color and definition"
+  ],
+};
+
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+ 
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <CourseAbout
+    title={course_about.title}
+    description={course_about.description}
+    image={course_about.img}
+  />
+  <CourseDetail
+    title={course_detail.title}
+    text={course_detail.text}
+    card_list={course_detail.card_list}
+    list_items={course_detail.list_items}
+    list_title={course_detail.list_title}
+    list_subtitle={course_detail.list_subtitle}
+  />
+  <CourseBanner
+    title={course_banner.title}
+    paragraph={course_banner.paragraph}
+    cta={course_banner.cta}
+    cta_link={course_banner.cta_link}
+    image_banner={course_banner.image_banner}
+  />
+  <CourseInfo info={course_info} />
+</Base>

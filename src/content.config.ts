@@ -94,60 +94,9 @@ const aboutCollection = defineCollection({
     page_title: z.string(),
     description: z.string().optional(),
     meta_title: z.string().optional(),
-    image: z.string().optional(),
-    buttons: z.array(
-      z.object({
-        label: z.string(),
-        link: z.string(),
-        outline: z.boolean().optional(),
-        enable: z.boolean().default(true),
-      }),
-    ),
-
-    // Counter
-    counter: z.array(
-      z.object({
-        name: z.string(),
-        number: z.union([z.number(), z.string()]), // Support both numeric and string types (e.g., 'M', 'K')
-        measurement: z.string(),
-        color: z.string(),
-      }),
-    ),
-
-    // Gallery
-    gallery: z.object({
-      title: z.string(),
-      images: z.array(z.string()),
-    }),
-
-    // Our Work
-    features: z.object({
-      title: z.string(),
-      button: z.object({
-        label: z.string(),
-        link: z.string(),
-        enable: z.boolean().default(true),
-      }),
-      features_list: z.array(
-        z.object({
-          title: z.string(),
-          content: z.string(),
-        }),
-      ),
-    }),
-
-    // Team Members
-    members: z.object({
-      title: z.string(),
-      description: z.string(),
-      member_list: z.array(
-        z.object({
-          name: z.string(),
-          field: z.string(),
-          image: z.string(),
-        }),
-      ),
-    }),
+    banner_image: z.string().optional(),
+    subtitle: z.string().optional(),
+    icon: z.string().optional()
   }),
 });
 

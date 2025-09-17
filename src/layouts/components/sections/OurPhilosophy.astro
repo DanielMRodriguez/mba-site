@@ -1,0 +1,80 @@
+---
+import Title from "@/layouts/components/Title.astro";
+import CardOutlayer from "@/layouts/components/CardOutlayer.astro";
+
+const cards = [
+    {
+        title: "Impact & Integrity",
+        description: "To date, María has served over 3,000 women, all walking endorsements of her technical expertise and empathetic approach. Her work is distinguished by a steadfast commitment to safety, comfort, precision, and long-term satisfaction—practices that enrich both aesthetics and client trust.",
+    },
+    {
+        title: "Looking Ahead",
+        description: "As María continues evolving as both an artist and educator, Modern Beauty ACA remains committed to innovation, community, and transformative beauty. Whether through one-on-one services or mentorship programs, our mission remains steadfast: to help women feel powerful in their appearance and confident in their future.",
+    },
+];
+
+
+---
+
+<section class="our-philosophy-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 py-6">
+        <Title
+          tag="h2"
+          title={"Our Philosophy"}
+          class="center"
+          align="center"
+        />
+      </div>
+      <div class="col-12">
+        <h4>Individual Beauty for Every Face</h4>
+        <div class="w-full md:w-1/2">
+          <p>
+            Each treatment is crafted to respect and enhance your unique
+            features—not a one-size-fits-all template. Many clients arrive
+            seeking more than aesthetic results; they seek renewed confidence.
+            María meets them with empathy and care, ensuring every service
+            uplifts both appearance and spirit
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="our-philosophy-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card-outlayer-container">
+                    {cards.map((card) => (
+                        <CardOutlayer title={card.title} description={card.description} />
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .card-outlayer-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .our-philosophy-2{
+        padding: 50px 0;
+        background-color: #27252A;
+    }
+    .our-philosophy-1{
+        padding: 10px 0;
+        margin-bottom: 50px;
+    }
+
+    @media (max-width: 768px) {
+        .card-outlayer-container{
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+</style>

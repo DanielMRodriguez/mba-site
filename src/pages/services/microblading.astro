@@ -1,0 +1,119 @@
+---
+import Hero from "@/components/Hero.astro";
+import CourseAbout from "@/layouts/components/sections/CourseAbout.astro";
+import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
+import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
+import CourseDetail from "@/layouts/components/sections/CourseDetail.astro";
+import Base from "@/layouts/Base.astro";
+
+const meta_datos = {
+  title: "Microblading",
+  meta_title: "Realistic, hair-like brows that enhance your natural beauty.",
+  description: "Realistic, hair-like brows that enhance your natural beauty.",
+};
+
+const hero = {
+  title: "Microblading",
+  subtitle: "Realistic, hair-like brows that enhance your natural beauty.",
+  cta: "Book Appointment",
+  cta_link: "/contact",
+  image_banner: "/images/microblading/banner-microblading.png",
+};
+
+
+const course_about = {
+  title: "All About Microblading",
+  description: "<p class='mb-8'>Microblading is a semi-permanent technique that uses ultra-fine blades to create realistic, hair-like strokes, giving you fuller, symmetrical, and natural-looking eyebrows. It's ideal for clients who want to enhance sparse, overplucked, or uneven brows with precision and elegance.</p> <p class='mb-8'>Unlike powder-based techniques, microblading mimics the look of real brow hairs, making it perfect for those seeking a softer and more subtle result that blends seamlessly with their natural brows.</p>",
+  img: "/images/microblading/esteticista-realizando.png",
+};
+
+const course_detail = {
+  title: "Microblading Styles",
+  text: "Each brow is customized based on your face shape, bone structure, and natural hair pattern. Looking for added shading? Consider Combo Brows, which blend microblading with a powder finish.",
+  card_list: [
+    {
+      title: "Natural Stroke Brows",
+      description:
+        "Fine, hair-like strokes that blend with your existing brows for a soft, natural enhancement. Best for clients who want a \"barely noticeable\" brow boost.",
+    },
+    {
+      title: "Defined Stroke Brows",
+      description:
+        "A natural ombre effect that fades from lighter fronts to darker tails. Ideal for everyday beauty with a barely-there feel.",
+    },
+  ],
+  list_title: "How to Prepare for Your Appointment",
+  list_subtitle: "",
+  list_items: [
+    "<span class='color-primary'>✱</span> Stop using retinol or acids 1 week prior.",
+    "<span class='color-primary'>✱</span> Avoid blood thinners and supplements like aspirin or fish oil 1 week before.",
+    "<span class='color-primary'>✱</span> No alcohol or caffeine 24-48 hours before.",
+    "<span class='color-primary'>✱</span> Avoid sun exposure or tanning 3 days before.",
+    "<span class='color-primary'>✱</span> Do not wax or tint brows 72 hours prior.",
+    "<span class='color-primary'>✱</span> Come with clean skin, no brow makeup.",
+  ],
+};
+
+const course_banner = {
+  title: "Wake Up with Perfect Brows - Every Day",
+  paragraph:
+    "Ditch the pencils and powders. Book your microblading appointment today and enjoy effortless, natural brows for up to 18 months.",
+  cta: "Book Now",
+  cta_link: "/contact",
+  image_banner: "/images/microblading/banner-microblading.png",
+};
+
+
+
+const course_info = {
+  title: "Microblading Aftercare Guide",
+  subtitle:
+    "Proper healing ensures great results. Follow these instructions:",
+  list: [
+    "✱ Gently clean the area with a mild, fragrance-free cleanser",
+    "✱ Apply healing ointment 2-3 times daily for up to 7 days",
+    "✱ Do not scratch, pick, or peel the scabs",
+    "✱ Avoid water, sweating, and makeup on the area for at least 10 days",
+    "✱ Expect color to soften and fade slightly during healing - this is normal",
+    "✱ Stay out of pools, saunas, and direct sun during the healing phase",
+  ],
+};
+
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+ 
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <CourseAbout
+    title={course_about.title}
+    description={course_about.description}
+    image={course_about.img}
+  />
+  <CourseDetail
+    title={course_detail.title}
+    text={course_detail.text}
+    card_list={course_detail.card_list}
+    list_items={course_detail.list_items}
+    list_title={course_detail.list_title}
+    list_subtitle={course_detail.list_subtitle}
+  />
+  <CourseBanner
+    title={course_banner.title}
+    paragraph={course_banner.paragraph}
+    cta={course_banner.cta}
+    cta_link={course_banner.cta_link}
+    image_banner={course_banner.image_banner}
+  />
+  <CourseInfo info={course_info} />
+</Base>

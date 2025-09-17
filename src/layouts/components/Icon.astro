@@ -1,0 +1,20 @@
+---
+interface Props {
+  name: string;
+  size?: string | number;
+  class?: string;
+  color?: string;
+  title?: string;
+}
+
+const { name } = Astro.props as Props;
+
+const svgContent = await import(`/images/icon/${name}.svg?raw`).then(
+  (res) => res.default
+);
+
+const processedSvg = svgContent;
+console.log("svg" , processedSvg);
+---
+
+<Fragment set:html={processedSvg} />

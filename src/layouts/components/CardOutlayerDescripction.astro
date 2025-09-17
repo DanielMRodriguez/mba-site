@@ -1,0 +1,25 @@
+---
+const { title, description } = Astro.props;
+---
+
+<div class="card-Outlayer">
+  <div class="card-Outlayer-body">
+    <h3 class="text-white mb-4">{title}</h3>
+    <p class="card-Outlayer-text">{description}</p>
+  </div>
+</div>
+
+<style>
+  .card-Outlayer {
+    font-size: 20px;
+    border: 1px solid #ff715e;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .card-Outlayer-text {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+  }
+</style>

@@ -1,0 +1,29 @@
+<svg id="g2298" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25.815" height="25.815" viewBox="0 0 25.815 25.815">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="path2304" d="M25.815-682.665H0v25.815H25.815Z" transform="translate(0 682.665)" fill="#4b4036" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="g2300">
+    <g id="g2302" clip-path="url(#clip-path)">
+      <g id="g2308" transform="translate(16.22 16.22)">
+        <path id="path2310" d="M-185.027,0l6.635,6.635a1.513,1.513,0,0,1,0,2.139,1.513,1.513,0,0,1-2.139,0l-6.635-6.635Z" transform="translate(187.166)" fill="none" stroke="#4b4036" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="g2312" transform="translate(17.29 17.29)">
+        <path id="path2314" d="M2.139,0,0,2.139" fill="none" stroke="#4b4036" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="g2316" transform="translate(16.542 15.116)">
+        <path id="path2318" d="M1.461-37.175,0-38.636" transform="translate(0 38.636)" fill="none" stroke="#4b4036" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="g2320" transform="translate(15.116 16.542)">
+        <path id="path2322" d="M1.461-37.175,0-38.636" transform="translate(0 38.636)" fill="none" stroke="#4b4036" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="g2324" transform="translate(0.378 0.378)">
+        <path id="path2326" d="M-230.924,0a9.086,9.086,0,0,1,9.076,9.076,9.086,9.086,0,0,1-9.076,9.076A9.086,9.086,0,0,1-240,9.076,9.086,9.086,0,0,1-230.924,0Z" transform="translate(239.999)" fill="none" stroke="#4b4036" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="g2328" transform="translate(1.891 1.891)">
+        <path id="path2330" d="M-31.794-70.715a7.528,7.528,0,0,1,1.71,4.784,7.572,7.572,0,0,1-7.563,7.563,7.572,7.572,0,0,1-7.563-7.563,7.572,7.572,0,0,1,7.563-7.563,7.527,7.527,0,0,1,4.784,1.71" transform="translate(45.211 73.494)" fill="none" stroke="#4b4036" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

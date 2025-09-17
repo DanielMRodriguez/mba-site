@@ -1,0 +1,21 @@
+---
+const { title, description, image } = Astro.props;
+import Title from "@/layouts/components/Title.astro";
+---
+
+<section class="section course-about">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-16">
+        <Title title={title} align="center" tag="h2" />
+      </div>
+
+      <div class="col-12 md:col-6">
+        <p set:html={description} />
+      </div>
+      <div class="col-12 md:col-5 px-4 md:px-16">
+        <img src={image} alt={title} />
+      </div>
+    </div>
+  </div>
+</section>

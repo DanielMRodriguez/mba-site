@@ -1,0 +1,30 @@
+---
+// Heading.astro
+const { tag = "h2", title, align, ...attrs } = Astro.props;
+const allowed = new Set(["h1", "h2", "h3", "h4", "h5", "h6"]);
+const Tag = allowed.has(tag) ? tag : "h2";
+const alignClasses = {
+  center: "justify-center",
+  left: "justify-start",
+  right: "justify-end",
+} as const;
+const alignClass = alignClasses[align as keyof typeof alignClasses] || "justify-start";
+---
+
+<div class={`flex items-center w-full ${alignClass}`}>
+  <img src="/images/icon/header.svg" alt="title" class="mr-4" />
+  <Tag {...attrs}> {title} </Tag>
+  <img src="/images/icon/header.svg" alt="title" class="ml-4" />
+</div>
+
+<style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #de968d;
+    font-weight: 400;
+  }
+</style>

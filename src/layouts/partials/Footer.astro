@@ -5,31 +5,23 @@ import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import social from "@/config/social.json";
 import { markdownify } from "@/lib/utils/textConverter";
-const { footer } = menu;
+const { footer, footer_help, footer_training } = menu;
 const { copyright, location, email, phone, footer_description } = config.params;
 ---
 
-<footer class="footer bg-[#F1F1F1]">
+<footer class="footer bg-[#FCF5F5]">
   <div class="container">
     <div class="gx-5 row pb-10 pt-[52px]">
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <Logo />
-        <p class="mt-6">
-          {footer_description}
-        </p>
+      <div class="col-12 mt-12 md:col-6 lg:col-2">
+        <img src="/images/home/logo-claro.svg" alt="Moder Beauty Academy" />
       </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Socials</h6>
-
-        <Social source={social} className="social-icons mt-4 lg:mt-6" />
-      </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Quick Links</h6>
+      <div class="col-12 mt-12 md:col-6 lg:col-2">
+        <h6 class="text-[#FF715E]">SERVICES</h6>
         <ul>
           {
             footer.map((item, i) => (
-              <li class={footer.length - 1 === i ? "mb-0" : "mb-4"}>
-                <a class="hover:text-primary hover:underline " href={item.url}>
+              <li class={footer.length - 1 === i ? "mb-0" : "mb-0"}>
+                <a class="text-[#FF715E]  hover:underline " href={item.url}>
                   {item.name}
                 </a>
               </li>
@@ -37,29 +29,49 @@ const { copyright, location, email, phone, footer_description } = config.params;
           }
         </ul>
       </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Location & Contact</h6>
+
+      <div class="col-12 mt-12 md:col-6 lg:col-2">
+        <h6 class="text-[#FF715E]">TRAINING</h6>
         <ul>
-          <li class="mb-2">{location}</li>
-          <li class="mb-2">
-            <a class="mb-2 hover:text-primary" href={`mailto:${email}`}
-              >{email}</a
-            >
-          </li>
-          <li>
-            <a class="hover:text-primary hover:underline" href={`tel:${phone}`}
-              >{phone}</a
-            >
-          </li>
+          {
+            footer_training.map((item, i) => (
+              <li class={footer.length - 1 === i ? "mb-0" : "mb-0"}>
+                <a class="text-[#FF715E]  hover:underline " href={item.url}>
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
         </ul>
+      </div>
+
+      <div class="col-12 mt-12 md:col-6 lg:col-3">
+        <h6 class="text-[#FF715E]">HELP</h6>
+        <ul>
+          {
+            footer_help.map((item, i) => (
+              <li class={footer.length - 1 === i ? "mb-0" : "mb-0"}>
+                <a class="text-[#FF715E]  hover:underline " href={item.url}>
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="col-12 mt-12 md:col-6 lg:col-3">
+        <h6 class="text-[#FF715E]">FOLLOW US</h6>
+
+        <Social source={social} className="social-icons mt-4 lg:mt-6" />
       </div>
     </div>
   </div>
-  <div class="container max-w-[1440px]">
+  <div class="container w-full max-w-full bg-[#FF715E]">
     <div
-      class="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-center"
+      class="footer-copyright mx-auto border-t border-border pb-1 pt-1 text-center"
     >
-      <p class="content text-text" set:html={markdownify(copyright)} />
+      <p class="content text-white text-sm opacity-50" set:html={copyright} />
     </div>
   </div>
 </footer>

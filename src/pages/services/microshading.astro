@@ -1,0 +1,119 @@
+---
+import Hero from "@/components/Hero.astro";
+import CourseAbout from "@/layouts/components/sections/CourseAbout.astro";
+import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
+import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
+import CourseDetail from "@/layouts/components/sections/CourseDetail.astro";
+import Base from "@/layouts/Base.astro";
+
+const meta_datos = {
+  title: "Microshading",
+  meta_title: "Soft, gradient brows with a flawless, makeup-like finish.",
+  description: "Soft, gradient brows with a flawless, makeup-like finish.",
+};
+
+const hero = {
+  title: "Microshading",
+  subtitle: "Soft, gradient brows with a flawless, makeup-like finish.",
+  cta: "Book Appointment",
+  cta_link: "/contact",
+  image_banner: "/images/microshading/microshading-banner.png",
+};
+
+
+const course_about = {
+  title: "All About Microshading",
+  description: "<p class='mb-8'>Microshading is a semi-permanent brow technique that gives your brows a soft, powdered effect perfect for those who want fuller, defined brows without harsh edges. Often called the \"shadow brow,\" this treatment uses tiny, pin-like dots of pigment to create a gradient, filled-in look. It's ideal for clients with sensitive skin, oily skin, or anyone who prefers a polished brow appearance similar to wearing makeup, but without the daily effort.</p>",
+  img: "/images/microshading/mujer-joven-recibiendo-un-tratamiento.png",
+};
+
+const course_detail = {
+  title: "Microshading Styles",
+  text: "Choose your ideal finish based on your personal style and facial features. Microshading can also be combined with hair-stroke techniques like microblading for a Combo Brow, blending precision with softness.",
+  card_list: [
+    {
+      title: "Full Shaded Brows",
+      description:
+        "A natural ombre effect that fades from lighter fronts to darker tails. Ideal for everyday beauty with a barely-there feel.",
+    },
+    {
+      title: "Full Shaded Brows",
+      description:
+        "A bolder, makeup-inspired look with even saturation throughout the brow. Great for those who love definition and symmetry.",
+    },
+  ],
+  list_title: "How to Prepare for Your Appointment",
+  list_subtitle: "To ensure the best results, please follow these guidelines:",
+  list_items: [
+    "<span class='color-primary'>✱</span> Avoid blood-thinning medications or supplements 1 week prior.",
+    "<span class='color-primary'>✱</span> No alcohol or caffeine 24-48 hours before.",
+    "<span class='color-primary'>✱</span> Don't wax, tint, or thread your brows 3 days prior.", 
+    "<span class='color-primary'>✱</span> Stop using retinol, acids, and exfoliants 1 week before.",
+    "<span class='color-primary'>✱</span> Arrive with clean skin and no makeup on the brow area.",
+    "<span class='color-primary'>✱</span> Avoid chemical peels or facial treatments close to the session.",
+  ],
+};
+
+const course_banner = {
+  title: "Brows That Stay Put All Day, Every Day",
+  paragraph:
+    "Get the perfect brow definition with none of the hassle. Book your microshading appointment and enjoy flawless results that last for months.",
+  cta: "Book Now",
+  cta_link: "/contact",
+  image_banner: "/images/microshading/microshading-banner.png",
+};
+
+
+
+const course_info = {
+  title: "Brow Lamination Aftercare Guide",
+  subtitle:
+    "Proper healing ensures great results. Follow these instructions",
+  list: [
+    "✱ Clean gently with a fragrance-free cleanser twice a day",
+    "✱ Apply the recommended ointment 2-3 times daily for 7 days",
+    "✱ Avoid scratching, rubbing, or picking at scabs",
+    "✱ Do not apply makeup on or around brows for 10 days",
+    "✱ Stay away from pools, saunas, and heavy workouts while healing",
+    "✱ Expect light flaking and fading—this is part of the normal process",
+  ],
+};
+
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+ 
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <CourseAbout
+    title={course_about.title}
+    description={course_about.description}
+    image={course_about.img}
+  />
+  <CourseDetail
+    title={course_detail.title}
+    text={course_detail.text}
+    card_list={course_detail.card_list}
+    list_items={course_detail.list_items}
+    list_title={course_detail.list_title}
+    list_subtitle={course_detail.list_subtitle}
+  />
+  <CourseBanner
+    title={course_banner.title}
+    paragraph={course_banner.paragraph}
+    cta={course_banner.cta}
+    cta_link={course_banner.cta_link}
+    image_banner={course_banner.image_banner}
+  />
+  <CourseInfo info={course_info} />
+</Base>

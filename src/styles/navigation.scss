@@ -12,7 +12,7 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 
 .header {
-  @apply sticky top-0 z-50  bg-white py-6 transition-all duration-300 lg:bg-transparent;
+  @apply sticky top-0 z-50  bg-white py-3 transition-all duration-300 lg:bg-transparent;
 
   &-sticky {
     @apply bg-white shadow;
@@ -61,4 +61,301 @@ input#nav-toggle:checked ~ #nav-menu {
 
 .nav-dropdown-link {
   @apply min-w-[150px] py-1 text-sm font-medium text-dark transition hover:text-primary;
+}
+
+
+
+$color-background: #3faf82;
+$color-menu: #4B4036;
+$color-menu-open: #F2CECE;
+$cubic-bezier-linea1: cubic-bezier(0.8, 0.8, 0, 1.01);
+$duration: .8s;
+$width: 50px;
+$height:6px ;
+$margin: 3px;
+$move-y: $height + ($margin * 2);
+@mixin flex-align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin linea($width, $height) {
+  width: $width;
+  height: $height;
+  background-color: $color-menu;
+  border-radius: 16px;
+}
+
+
+.menu {
+  @include flex-align-center;
+  flex-direction: column;
+  .menu__tap-1,
+  .menu__tap-2,
+  .menu__tap-3 {
+    @include linea($width, $height);
+    margin: $margin 0;
+    transition: 0.5s;
+  }
+  .menu__tap-2 {
+    animation: linea2-rev $duration ease;
+    animation-fill-mode: forwards;
+  }
+  .menu__tap-3 {
+    animation: linea3-rev $duration ease;
+    animation-fill-mode: forwards;
+  }
+  .menu__tap-1 {
+    animation: linea1-rev $duration ease;
+    animation-fill-mode: forwards;
+  }
+  &.open .menu__tap-2 {
+    animation: linea2 $duration ease;
+    animation-fill-mode: forwards;
+  }
+
+  &.open .menu__tap-1 {
+    animation: linea1 $duration $cubic-bezier-linea1;
+    animation-fill-mode: forwards;
+  }
+
+  &.open .menu__tap-3 {
+    animation: linea3 $duration ease;
+    animation-fill-mode: forwards;
+  }
+
+  &.open {
+    .menu__tap-1,
+    .menu__tap-2,
+    .menu__tap-3 {
+      background-color: $color-menu-open;
+    }
+  }
+}
+.no-ani {
+  animation: none !important;
+}
+
+@keyframes linea3 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+
+  50% {
+    transform: translate3d(0, -$move-y, 0) rotate(0);
+  }
+
+  100% {
+    transform: translate3d(0, -$move-y, 0) rotate(135deg);
+  }
+}
+
+@keyframes linea3-rev {
+  0% {
+    transform: translate3d(0, -$move-y, 0) rotate(135deg);
+  }
+
+  50% {
+    transform: translate3d(0, -$move-y, 0) rotate(0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+}
+
+@keyframes linea1 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+
+  50% {
+    transform: translate3d(0, $move-y, 0) rotate(0);
+  }
+
+  100% {
+    transform: translate3d(0, $move-y, 0) rotate(45deg);
+  }
+}
+@keyframes linea1-rev {
+  0% {
+    transform: translate3d(0, $move-y, 0) rotate(45deg);
+  }
+
+  50% {
+    transform: translate3d(0, $move-y, 0) rotate(0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+}
+@keyframes linea2 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+}
+
+@keyframes linea2-rev {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  40% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Fullscreen Menu Styles
+.fullscreen-menu {
+  @apply fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-500 ease-in-out;
+  
+  &.active {
+    @apply translate-x-0;
+  }
+
+  @media (max-width: 1024px) {
+    overflow-y: auto;
+  }
+}
+
+.fullscreen-menu__content {
+  @apply h-full flex justify-center px-6 pb-20 pt-20  md:pt-[150px];
+  background-color: #403030F2;
+}
+
+.fullscreen-nav__list {
+  display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  // gap: 2rem;
+  // list-style: none;
+
+  @media (min-width: 1024px) {
+    gap: 4rem;
+  }
+}
+
+.fullscreen-nav__item {
+  @apply relative;
+}
+
+.fullscreen-nav__link {
+  @apply text-3xl lg:text-2xl font-medium text-white transition-colors duration-300 hover:text-[#F2CECE] block text-center;
+  
+  &--parent {
+    @apply cursor-default mb-4 lg:mb-0 text-white;
+  }
+  
+  &--child {
+    @apply text-xl lg:text-lg text-[#F2CECE] cursor-pointer;
+  }
+  
+  &.active {
+    @apply text-white font-semibold relative;
+    
+    &::after {
+      @apply absolute bottom-0 left-0 right-0 h-0.5 bg-[#F2CECE] content-[''] transform scale-x-100;
+    }
+  }
+}
+
+.fullscreen-nav__dropdown {
+  @apply text-center;
+}
+
+.fullscreen-nav__submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  margin-top: 1rem;
+  max-width: none;
+  @media (min-width: 1024px) {
+    
+  }
+}
+
+.fullscreen-nav__subitem {
+  @apply flex-shrink-0;
+}
+
+// Prevent body scroll when menu is open
+body.menu-open {
+  @apply overflow-hidden;
+}
+
+// Menu entrance animations
+.fullscreen-menu.active {
+  .fullscreen-nav__item {
+    animation: slideInUp 0.6s ease-out forwards;
+    opacity: 0;
+    
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{0.1 * $i}s;
+      }
+    }
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Mobile specific styles
+@media (max-width: 1023px) {
+  .fullscreen-menu__content {
+    @apply pt-32;
+  }
+  
+  .fullscreen-nav__list {
+    @apply gap-6;
+    flex-direction: column;
+  }
+  
+  .fullscreen-nav__submenu {
+    @apply gap-3;
+  }
+  
+  .fullscreen-nav__link {
+    @apply text-2xl;
+    
+    &--child {
+      @apply text-lg text-[#F2CECE];
+    }
+  }
+}
+
+
+#menu{
+  position: relative;
+  z-index: 1000;
+}
+
+#logo-s{
+  position: relative;
+  z-index: 1000;
 }

@@ -1,0 +1,120 @@
+---
+import Hero from "@/components/Hero.astro";
+import CourseAbout from "@/layouts/components/sections/CourseAbout.astro";
+import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
+import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
+import CourseDetail from "@/layouts/components/sections/CourseDetail.astro";
+import Base from "@/layouts/Base.astro";
+
+const meta_datos = {
+  title: "Combo Brows",
+  meta_title: "The perfect blend of natural strokes and soft shading.",
+  description: "The perfect blend of natural strokes and soft shading.",
+};
+
+const hero = {
+  title: "Combo Brows",
+  subtitle: "The perfect blend of natural strokes and soft shading.",
+  cta: "Book Appointment",
+  cta_link: "/contact",
+  image_banner: "/images/combo-brows/combo-banner.png",
+};
+
+
+const course_about = {
+  title: "All About Combo Brows",
+  description: "<p class='mb-8'>Combo Brows combine the best of both worlds—the natural look of microblading with the added depth of microshading. This technique blends realistic hair-like strokes in the front of the brows with a soft, powdery finish toward the arch and tail, creating beautiful dimension and a more filled-in appearance.</p> <p class='mb-8'> This is the ideal service for clients who love the definition of makeup but want a natural-looking brow shape that lasts. It's especially great for those with sparse or uneven brows, or anyone who wants longer-lasting results with full coverage.</p>",
+  img: "/images/combo-brows/cerca-de-maquillaje-glamoroso.png",
+};
+
+const course_detail = {
+  title: "Front Microblading + Soft Shading",
+  text: "",
+  card_list: [
+    {
+      title: "Front Microblading + Soft Shading",
+      description:
+      "Hair strokes in the front for a natural beginning, fading into soft shading through the arch and tail. Perfect for those who want a structured yet subtle finish."
+    },
+    {
+      title: "Full Combo Coverage",
+      description:
+        "More shading throughout the entire brow with subtle strokes on top—ideal for clients who prefer a bolder, more defined brow look with lasting color."
+    },
+  ],
+  list_title: "How to Prepare for Your Appointment",
+  list_subtitle: "To ensure the best results, please follow these guidelines:",
+  list_items: [
+    "<span class='color-primary'>✱</span> Stop using retinol, exfoliants, or acids at least 1 week prior.",
+    "<span class='color-primary'>✱</span> Avoid blood thinners (aspirin, fish oil, etc.) 5-7 days before.",
+    "<span class='color-primary'>✱</span> No alcohol or caffeine 24-48 hours before the appointment.",
+    "<span class='color-primary'>✱</span> Avoid waxing, tinting, or tweezing the brows for 3 days before.",
+    "<span class='color-primary'>✱</span> Come with clean skin and no makeup in the brow area.",
+    "<span class='color-primary'>✱</span> No facials or intense skin treatments for at least 7 days prior.",
+  ],
+};
+
+const course_banner = {
+  title: "Balanced. Beautiful. Built to Last.",
+  paragraph:
+    "Experience the perfect combination of definition and softness with our Combo Brows. Book your session and enjoy effortlessly flawless brows for months.",
+  cta: "Book Now",
+  cta_link: "/contact",
+  image_banner: "/images/combo-brows/combo-banner.png",
+};
+
+
+
+const course_info = {
+  title: "Combo Brows Aftercare Guide",
+  subtitle:
+    "Proper healing ensures great results. Follow these instructions;",
+  list: [
+    "✱ Clean the brows gently twice a day with fragrance-free cleanser",
+    "✱ Apply healing ointment 2-3 times daily for 7-10 days",
+    "✱ Avoid scratching or picking at flaking skin",
+    "✱ Don't apply makeup or skincare on brows while healing",
+    "✱ Avoid sweating, hot showers, swimming, and sun exposure for at least 10 days",
+    "✱ Expect color to fade slightly before stabilizing; this is normal",
+    "✱ A follow-up touch-up session is recommended after 6-8 weeks"
+  ],
+};
+
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+ 
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <CourseAbout
+    title={course_about.title}
+    description={course_about.description}
+    image={course_about.img}
+  />
+  <CourseDetail
+    title={course_detail.title}
+    text={course_detail.text}
+    card_list={course_detail.card_list}
+    list_items={course_detail.list_items}
+    list_title={course_detail.list_title}
+    list_subtitle={course_detail.list_subtitle}
+  />
+  <CourseBanner
+    title={course_banner.title}
+    paragraph={course_banner.paragraph}
+    cta={course_banner.cta}
+    cta_link={course_banner.cta_link}
+    image_banner={course_banner.image_banner}
+  />
+  <CourseInfo info={course_info} />
+</Base>

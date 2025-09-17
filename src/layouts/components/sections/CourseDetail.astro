@@ -1,0 +1,71 @@
+---
+import CardOutlayerDescripction from "@/layouts/components/CardOutlayerDescripction.astro";
+import Video from "@/layouts/components/Video.astro";
+const { title, text, card_list, list_items, list_title, list_subtitle } =
+  Astro.props;
+---
+
+<section class="section course-detail">
+  <div class="container">
+    <div class="row mb-20">
+      <div class="col-12">
+        <h2 class="text-white mb-4">{title}</h2>
+      </div>
+      <div class="col-12 md:col-5">
+        <p class="text-white">
+          {text}
+        </p>
+      </div>
+      <div class="col-12 md:col-7">
+        <div class="course-detail__cards">
+          {
+            card_list.map((item) => (
+              <CardOutlayerDescripction
+                title={item.title}
+                description={item.description}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h4 class="text-white mb-4">{list_title}</h4>
+      </div>
+      <div class="col-12 md:col-6">
+        <p class="text-white mb-5">
+          {list_subtitle}
+        </p>
+
+        <ul>
+            {
+                list_items.map((item) => (
+                    <li class="text-white" set:html={item}>
+                    </li>
+                ))
+            }
+        </ul>
+      </div>
+      <div class="col-12 md:col-6">
+        <Video />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .course-detail {
+    background-color: #27252a;
+  }
+  .course-detail__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+ ul li {
+    margin-bottom: 10px;
+ }
+  
+</style>

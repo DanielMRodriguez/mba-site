@@ -1,0 +1,123 @@
+---
+import Hero from "@/components/Hero.astro";
+import CourseAbout from "@/layouts/components/sections/CourseAbout.astro";
+import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
+import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
+import CourseDetail from "@/layouts/components/sections/CourseDetail.astro";
+import Base from "@/layouts/Base.astro";
+
+const meta_datos = {
+  title: "Powder Brows",
+  meta_title: "Soft, natural-looking brows with lasting definition.",
+  description: "Soft, natural-looking brows with lasting definition.",
+};
+
+const hero = {
+  title: "Powder Brows",
+  subtitle: "Soft, natural-looking brows with lasting definition.",
+  cta: "Book Appointment",
+  cta_link: "/contact",
+  image_banner: "/images/powder-brows/powe-brows-banner.png",
+};
+
+
+const course_about = {
+  title: "All About Powder Brows",
+  description: "<p class='mb-8'>Powder brows are the perfect solution for anyone who wants fuller, defined eyebrows with a soft, makeup-like finish. Unlike traditional microblading, which uses hair-like strokes, powder brows create a misty, shaded effect. This technique is ideal for clients with oily skin, mature skin, or those looking for a more polished look.</p> <p class='mb-8'> This semi-permanent technique gives your brows beautiful depth and color without harsh lines. The result? Brows that look naturally fuller, symmetrical, and are always ready—no makeup needed.</p>",
+  img: "/images/powder-brows/maquillaje-permanente-en-cejas.png",
+};
+
+const course_detail = {
+  title: "What Are Powder Brows?",
+  text: "Powder brows are created using a small machine that deposits pigment in tiny, pixelated dots. This method allows for: A soft, powdered finish - like brow makeup . Long-lasting results (12-24 months). Minimal trauma to the skin. Ideal for all skin types, especially oily or sensitive skin.",
+  card_list: [
+    {
+      title: "Soft Ombre Brows",
+      description:
+        "A light, airbrushed finish that fades from lighter fronts to darker tails. Perfect for a natural, daytime look that mimics the effect of softly filled-in brows.",
+    },
+    {
+      title: "Defined Powder Brows",
+      description:
+        "A bolder, more saturated brow style with even color throughout. Ideal for clients who want a makeup-ready appearance with crisp, clean definition.",
+    },
+  ],
+  list_title: "How to Prepare for Your Appointment",
+  list_subtitle: "Follow these instructions to ensure optimal results:",
+  list_items: [
+    "<span class='color-primary'>✱</span> No alcohol for 48 hours before your appointment.",
+    "<span class='color-primary'>✱</span> Avoid sun exposure and tanning 1 week before.",
+    "<span class='color-primary'>✱</span> Avoid caffeine the day of your session.",
+    "<span class='color-primary'>✱</span> Stop using retinoids and exfoliating treatments 1 week before.",
+    "<span class='color-primary'>✱</span> No botox or fillers in the brow area for at least 3 weeks prior.",
+    "<span class='color-primary'>✱</span> Arrive with clean skin and no makeup on the brow area",
+  ],
+};
+
+const course_banner = {
+  title: "Wake Up with Perfect Brows",
+  paragraph:
+    "Book your eyeliner appointment today and enjoy effort less beauty every morning. Our technique is safe, precise, and tailored to you.No more filling in or smudging. Book your powder brows appointment and enjoy effortless beauty every day.",
+  cta: "Book Now",
+  cta_link: "/contact",
+  image_banner: "/images/powder-brows/powe-brows-banner.png",
+};
+
+const course_info = {
+  title: "Eyeliner Aftercare Guide",
+  subtitle:
+    "30 minutes after your session, gently clean the area with a tissue. Follow these care steps:",
+  list: [
+    "✱ Keep brows clean and dry for the first 24 hours",
+    "✱ Gently clean brows twice daily with mild soap and pat dry",
+    "✱ Apply healing ointment 2-3 times daily for 7-10 days", 
+    "✱ Don't pick or scratch scabs - let them fall naturally",
+    "✱ Some redness and mild swelling is normal for 2-3 days",
+    "✱ Color will appear dark at first, then lighten 30-50% while healing",
+    "✱ Avoid makeup, swimming, saunas, and intense sweating for 10 days",
+    "✱ Avoid direct sun exposure and tanning for 4 weeks",
+    "✱ Schedule touch-up appointment 6-8 weeks after initial session",
+  ],
+};
+
+
+
+
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+ 
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <CourseAbout
+    title={course_about.title}
+    description={course_about.description}
+    image={course_about.img}
+  />
+  <CourseDetail
+    title={course_detail.title}
+    text={course_detail.text}
+    card_list={course_detail.card_list}
+    list_items={course_detail.list_items}
+    list_title={course_detail.list_title}
+    list_subtitle={course_detail.list_subtitle}
+  />
+  <CourseBanner
+    title={course_banner.title}
+    paragraph={course_banner.paragraph}
+    cta={course_banner.cta}
+    cta_link={course_banner.cta_link}
+    image_banner={course_banner.image_banner}
+  />
+  <CourseInfo info={course_info} />
+</Base>

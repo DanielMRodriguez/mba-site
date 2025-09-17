@@ -1,0 +1,118 @@
+---
+import Hero from "@/components/Hero.astro";
+import CourseAbout from "@/layouts/components/sections/CourseAbout.astro";
+import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
+import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
+import CourseDetail from "@/layouts/components/sections/CourseDetail.astro";
+import Base from "@/layouts/Base.astro";
+
+const meta_datos = {
+  title: "Brow Lamination",
+  meta_title: "Fluffy, lifted, and effortlessly sleek brows.",
+  description: "Fluffy, lifted, and effortlessly sleek brows.",
+};
+
+const hero = {
+  title: "Brow Lamination",
+  subtitle: "Fluffy, lifted, and effortlessly sleek brows.",
+  cta: "Book Appointment",
+  cta_link: "/contact",
+  image_banner: "/images/brow-lamination/banner-brow-lamination.png",
+};
+
+
+const course_about = {
+  title: "All About Brow Lamination",
+  description: "<p class='mb-8'>Brow lamination is a non-invasive treatment that restructures your brow hairs to keep them in a lifted, uniform shape. Think of it as a semi-permanent brow styling—like a \"perm\" for your brows—creating the look of fuller, perfectly brushed-up eyebrows.</p> <p class='mb-8'> It's ideal for clients with unruly, thin, or downward-growing brows who want a cleaner, fuller appearance without daily styling. Results last 6-8 weeks and give your brows that effortless, laminated look you see all over social media.</p>",
+  img: "/images/brow-lamination/beauty-master-corrigi.png",
+};
+
+const course_detail = {
+  title: "Brow Lamination Styles",
+  text: "At Modern Beauty ACA, we offer two custom eyeliner styles to suit your preferences. Each style is adjusted to your eye shape and preferences for a perfect, personalized finish.You can personalize your brow finish based on your desired intensity and shape. Here are the two most common styles. All brow shapes and hair types can benefit from lamination, and we'll tailor the finish to your facial structure and personal preferences.",
+  card_list: [
+    {
+      title: "Fluffy Natural Look",
+      description:
+        "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.Brows are brushed upward and softly shaped to keep a natural, airy, full look. Perfect for those who want volume with a \"no-makeup\" finish.",
+    },
+    {
+      title: "Defined Sleek Look",
+      description:
+        "Brows are straightened and sculpted with precision for a clean, polished appearance—great for those who love a more structured and photo-ready style.",
+    },
+  ],
+  list_title: "How to Prepare for Your Appointment",
+  list_subtitle: "",
+  list_items: [
+    "<span class='color-primary'>✱</span> Avoid using exfoliating products, retinoids, or AHAs near the brow area for at least 5 days before.",
+    "<span class='color-primary'>✱</span> No waxing, threading, or tinting the brows 72 hours before.",
+    "<span class='color-primary'>✱</span> Arrive with clean, makeup-free brows.",
+    "<span class='color-primary'>✱</span> Let your natural brow shape and hair grow for at least 2-3 weeks if possible.",
+    "<span class='color-primary'>✱</span> Avoid scheduling chemical peels or facials close to your appointment.",
+  ],
+};
+
+const course_banner = {
+  title: "Wake Up with Effortlessly Styled Brows",
+  paragraph:
+    "No more brow gel or styling brushes. Book your brow laminatio appointment and enjoy fuller, lifted brows that hold their shape day after day.",
+  cta: "Book Now",
+  cta_link: "/contact",
+  image_banner: "/images/brow-lamination/banner-brow-lamination.png",
+};
+
+
+
+const course_info = {
+  title: "Brow Lamination Aftercare Guide",
+  subtitle:
+    "For best results and long-lasting effects, follow these aftercare tips:",
+  list: [
+    "✱ Avoid getting your brows wet for 24 hours",
+    "✱ Don't touch, rub, or apply makeup to the brow area during this period",
+    "✱ Use a brow conditioner daily to nourish the hairs",
+    "✱ Brush your brows gently every morning to maintain their shape",
+    "✱ Avoid saunas, steam rooms, and heavy sweating for 48 hours",
+    "✱ Skip exfoliants, acids, or retinoids near brows for at least 5 days",
+  ],
+};
+
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+ 
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <CourseAbout
+    title={course_about.title}
+    description={course_about.description}
+    image={course_about.img}
+  />
+  <CourseDetail
+    title={course_detail.title}
+    text={course_detail.text}
+    card_list={course_detail.card_list}
+    list_items={course_detail.list_items}
+    list_title={course_detail.list_title}
+    list_subtitle={course_detail.list_subtitle}
+  />
+  <CourseBanner
+    title={course_banner.title}
+    paragraph={course_banner.paragraph}
+    cta={course_banner.cta}
+    cta_link={course_banner.cta_link}
+    image_banner={course_banner.image_banner}
+  />
+  <CourseInfo info={course_info} />
+</Base>

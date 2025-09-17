@@ -1,0 +1,121 @@
+---
+import Hero from "@/components/Hero.astro";
+import CourseAbout from "@/layouts/components/sections/CourseAbout.astro";
+import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
+import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
+import CourseDetail from "@/layouts/components/sections/CourseDetail.astro";
+import Base from "@/layouts/Base.astro";
+
+const meta_datos = {
+  title: "Eyeliner",
+  meta_title: "Eyeliner",
+  description: "Eyeliner",
+};
+
+const hero = {
+  title: "Eyeliner",
+  subtitle: "Wake up every day with defined, smudge-free eyes.",
+  cta: "Book Appointment",
+  cta_link: "/contact",
+  image_banner: "/images/eyeliner/mujer-aplicando.png",
+};
+
+
+const course_about = {
+  title: "About the Course",
+  description: "<p class='mb-8'>Struggling to get your eyeliner even on both sides? Tired of it fading by midday or smudging with every blink? You're not alone. Our semi-permanent eyeliner service takes the stress out of your daily makeup routine and enhances your natural beauty with long-lasting results.</p> <p class='mb-8'>Whether you prefer a soft, subtle lash enhancement or a bold, defined eye, this treatment can be fully customized to suit your eye shape, lash density, and style goals. </p> <p class='mb-8'> Our clients often say: \"If you can sit through it, it's 100% worth it.\"</p>",
+  img: "/images/eyeliner/mujer-aplicando.png",
+};
+
+const course_info = {
+  title: "Eyeliner",
+  subtitle:
+    "30 minutes after your session, gently clean the area with a tissue. Follow these care steps:",
+  list: [
+    "✱ Clean around the eyes twice daily with a mild, fragrance-free soap",
+    "✱ Apply ointment 2-3 times daily for 7 days",
+    "✱ Don't pick scabs - let them fall off naturally (7-10 days)",
+    "✱ Mild swelling, redness, or stinging are normal",
+    "✱ Color may lighten by 30-50% after healing",
+    "✱ Avoid makeup, hot yoga, saunas, swimming, or intense sweating until fully healed",
+    "✱ Use a mascara wand to remove any scabs hanging from lashes",
+    "✱ Eyeliner may look dark and crusty at first; this is temporary and part of the healing process",
+  ],
+};
+
+const course_banner = {
+  title: "Ready to Enhance Your Eyes?",
+  paragraph:
+    " Book your eyeliner appointment today and enjoy effort less beauty every morning. Our technique is safe, precise, and tailored to you.",
+  cta: "Book Now",
+  cta_link: "/contact",
+  image_banner: "/images/eyeliner/eyeliner-banner.png",
+};
+
+const course_detail = {
+  title: "Eyeliner Styles We Offer",
+  text: "At Modern Beauty ACA, we offer two custom eyeliner styles to suit your preferences. Each style is adjusted to your eye shape and preferences for a perfect, personalized finish.",
+  card_list: [
+    {
+      title: "Classic Eyeliner",
+      description:
+        "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+    },
+    {
+      title: "Lash Liner",
+      description:
+        "A subtle, natural look that defines the lash line without a strong outline. Ideal for those with sparse lashes who want depth and definition without the drama.",
+    },
+  ],
+  list_title: "How to Prepare for Your Appointment",
+  list_subtitle: "To ensure the best results, please follow these guidelines:",
+  list_items: [
+    "<span class='color-primary'>✱</span> Stop using blood thinners or supplements (ibuprofen, fish oil, turmeric, etc.) 1 week before.",
+    "<span class='color-primary'>✱</span> No alcohol for at least 48 hours prior.",
+    "<span class='color-primary'>✱</span> Avoid sun exposure 1 week before.",
+    "<span class='color-primary'>✱</span> Don't consume caffeine on the day of the appointment.",
+    "<span class='color-primary'>✱</span> Stop lash serums 4 weeks before.",
+    "<span class='color-primary'>✱</span> Remove lash extensions at least 2 days prior.",
+    "<span class='color-primary'>✱</span> Don't wear contact lenses to your session.",
+    "<span class='color-primary'>✱</span> Avoid botox or fillers near the eyes 3 weeks prior.",
+    "<span class='color-primary'>✱</span> Gently wash the eye area the night before.",
+  ],
+};
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+ 
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <CourseAbout
+    title={course_about.title}
+    description={course_about.description}
+    image={course_about.img}
+  />
+  <CourseDetail
+    title={course_detail.title}
+    text={course_detail.text}
+    card_list={course_detail.card_list}
+    list_items={course_detail.list_items}
+    list_title={course_detail.list_title}
+    list_subtitle={course_detail.list_subtitle}
+  />
+  <CourseBanner
+    title={course_banner.title}
+    paragraph={course_banner.paragraph}
+    cta={course_banner.cta}
+    cta_link={course_banner.cta_link}
+    image_banner={course_banner.image_banner}
+  />
+  <CourseInfo info={course_info} />
+</Base>

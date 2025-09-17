@@ -1,0 +1,31 @@
+---
+import Base from "@/layouts/Base.astro";
+import Hero from "@/layouts/components/Hero.astro";
+import AbountInfo from "@/layouts/components/sections/AbountInfo.astro";
+import OurPhilosophy from "@/layouts/components/sections/OurPhilosophy.astro";
+import LocationBooking from "@/layouts/components/LocationBooking.astro";
+
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+
+const about = (await getEntry("about", "-index")) as CollectionEntry<"about">;
+const { banner_image, subtitle, title, icon } = about.data;
+
+---
+
+<Base
+  title={about.data.title}
+  meta_title={about.data.meta_title}
+  description={about.data.description}
+>
+  <Hero
+    title={title}
+    subtitle={subtitle}
+    image_banner={banner_image}
+    icon={icon}
+  />
+
+  <AbountInfo />
+  <OurPhilosophy />
+  <LocationBooking />
+</Base>

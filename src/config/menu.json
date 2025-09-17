@@ -5,81 +5,169 @@
       "url": "/"
     },
     {
-      "name": "About",
-      "url": "/about"
-    },
-    {
-      "name": "Blog",
-      "url": "/blog"
-    },
-    {
-      "name": "Features",
-      "url": "/features"
-    },
-    {
-      "name": "How It Works",
-      "url": "/how-it-works"
-    },
-    {
-      "name": "Pages",
+      "name": "Services",
       "url": "",
       "hasChildren": true,
       "children": [
         {
-          "name": "Careers",
-          "url": "/careers"
-        },
-
-        {
-          "name": "Integrations",
-          "url": "/integrations"
-        },
-
-        {
-          "name": "Pricing",
-          "url": "/pricing"
+          "name": "Eyeliner",
+          "url": "/services/eyeliner"
         },
         {
-          "name": "Sign In",
-          "url": "/signin"
-        },
-
-        {
-          "name": "Elements",
-          "url": "/elements"
+          "name": "Brow Lamination",
+          "url": "/services/brow-lamination"
         },
         {
-          "name": "Changelog",
-          "url": "/changelog"
+          "name": "Microshading", 
+          "url": "/services/microshading"
         },
         {
-          "name": "Terms And Conditions",
-          "url": "/terms-and-conditions"
+          "name": "Microblading",
+          "url": "/services/microblading"
+        },
+        {
+          "name": "Combo Brows",
+          "url": "/services/combo-brows"
+        },
+        {
+          "name": "Powder Brows",
+          "url": "/services/powder-brows"
+        },
+        {
+          "name": "Brow Design Tint",
+          "url": "/services/brow-design-tint"
+        },
+        {
+          "name": "Lip Blushing",
+          "url": "/services/lip-blushing"
+        },
+        {
+          "name": "Lash Lifting",
+          "url": "/services/lash-lifting"
+        },
+        {
+          "name": "Touch-Ups",
+          "url": "/services/touch-ups"
         }
       ]
     },
     {
-      "name": "Contact",
+      "name": "Training",
+      "url": "/training",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Microblading Training",
+          "url": "/training/microblading"
+        },
+        {
+          "name": "Powder Brows Training", 
+          "url": "/training/powder-brows"
+        },
+        {
+          "name": "Lip Blushing Training",
+          "url": "/training/lip-blushing"
+        },
+        {
+          "name": "Online Lash Lifting Training",
+          "url": "/training/online-lash-lifting"
+        },
+        {
+          "name": "Online Microblading Training",
+          "url": "/training/online-microblading"
+        }
+      ]
+    },
+    {
+      "name": "About Us",
+      "url": "/about-us"
+    },
+    {
+      "name": "Blog",
       "url": "/contact"
     }
   ],
 
   "footer": [
     {
-      "name": "About",
-      "url": "/about"
+      "name": "Eyeliner",
+      "url": "/services/eyeliner"
     },
+    {
+      "name": "Brow Lamination", 
+      "url": "/services/brow-lamination"
+    },
+    {
+      "name": "Microshading",
+      "url": "/services/microshading"
+    },
+    {
+      "name": "Microblading",
+      "url": "/services/microblading"
+    },
+    {
+      "name": "Combo Brows",
+      "url": "/services/combo-brows"
+    },
+    {
+      "name": "Powder Brows",
+      "url": "/services/powder-brows"
+    },
+    {
+      "name": "Brow Design Tint",
+      "url": "/services/brow-design-tint"
+    },
+    {
+      "name": "Lip Blushing",
+      "url": "/services/lip-blushing"
+    },
+    {
+      "name": "Lash Lifting",
+      "url": "/services/lash-lifting"
+    },
+    {
+      "name": "Touch-Ups",
+      "url": "/services/touch-ups"
+    }
+  ],
+  "footer_training": [
+    {
+      "name": "Microblading Training",
+      "url": "/training/microblading"
+    },
+    {
+      "name": "Powder Brows Training", 
+      "url": "/training/powder-brows"
+    },
+    {
+      "name": "Lip Blushing Training",
+      "url": "/training/lip-blushing"
+    },
+    {
+      "name": "Online Lash Lifting Training",
+      "url": "/training/online-lash-lifting"
+    },
+    {
+      "name": "Online Microblading Training",
+      "url": "/training/online-microblading"
+    }
+  ],
+  "footer_help": [
     {
       "name": "Contact",
       "url": "/contact"
     },
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Blog",
+      "url": "/blog"
     },
     {
-      "name": "Changelog",
-      "url": "/changelog"
+      "name": "Privacy Policy", 
+      "url": "/privacy-policy"
+    },
+    {
+      "name": "Terms of Use",
+      "url": "/terms-of-use"
     }
   ]
 }
