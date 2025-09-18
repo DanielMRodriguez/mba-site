@@ -17,8 +17,8 @@ const { homepage_tab, our_service } = service;
     <HomepageTab client:load homepage_tab={homepage_tab} />
     {
       our_service.map((item, index) => (
-        <div class="gx-5 row mt-12 items-center lg:mt-0">
-          <div class={`lg:col-7 ${index % 2 === 0 ? "order-0" : "order-1"}`}>
+        <div class="gx-5 row mt-12 items-center lg:mt-0" data-aos="fade-up" data-aos-delay={index * 200}>
+          <div class={`lg:col-7 ${index % 2 === 0 ? "order-0" : "order-1"}`} data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} data-aos-delay={index * 200 + 100}>
             {item.image && (
               <div class="relative">
                 <Image
@@ -54,6 +54,8 @@ const { homepage_tab, our_service } = service;
             class={`mt-6 lg:col-5 lg:mt-0 ${
               index % 2 === 0 ? "order-1" : "order-0"
             }`}
+            data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}
+            data-aos-delay={index * 200 + 200}
           >
             <div class="text-container">
               <h2 class="lg:text-4xl">{item.title}</h2>
@@ -65,8 +67,8 @@ const { homepage_tab, our_service } = service;
               )}
               <ul class="mt-6 text-dark lg:-ml-4">
                 {item.list &&
-                  item.list.map((list) => (
-                    <li class="mb-2 flex items-center rounded px-4">
+                  item.list.map((list, listIndex) => (
+                    <li class="mb-2 flex items-center rounded px-4" data-aos="fade-in" data-aos-delay={index * 200 + 300 + listIndex * 100}>
                       <AiFillCheckCircle className="mr-3 fill-primary text-white" />
                       {list}
                     </li>

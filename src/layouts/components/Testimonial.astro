@@ -6,17 +6,17 @@ const { testimonial } = Astro.props;
 <section class="reviews">
   <div class="container">
     <div class="row justify-between">
-      <div class="lg:col-6">
+      <div class="lg:col-6" data-aos="fade-right">
         <h2>{testimonial.title}</h2>
       </div>
-      <div class="lg:col-4">
+      <div class="lg:col-4" data-aos="fade-left" data-aos-delay="200">
         <p>
           {testimonial.description}
         </p>
       </div>
     </div>
     <div class="row mt-10">
-      <div class="col-12">
+      <div class="col-12" data-aos="fade-up" data-aos-delay="400">
         <TestimonialSlider list={testimonial.testimonial_list} client:load />
       </div>
     </div>
