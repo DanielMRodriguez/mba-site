@@ -1,0 +1,58 @@
+---
+import CardOutlayerTrainingPage from "@/layouts/components/CardOutlayerTrainingPage.astro";
+const { title, cards } = Astro.props;
+---
+
+<section class="eyerlin-training-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-5">
+        <h2 class="text-white">{title}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="cards-container">
+    {
+      cards.map((card) => (
+        <div class="card-container">
+          <CardOutlayerTrainingPage title={card.title} description={card.description} cta={card.cta} label={card.label} />
+         
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: #27252a;
+  }
+
+  .eyerlin-training-page {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 768px) {
+    .cards-container {
+      grid-template-columns: repeat(1, 1fr);
+      margin-left: 20px;
+      margin-right: 20px;
+    
+    }
+
+    .card-container {
+      margin-bottom: 70px;
+    }
+  }
+
+  
+</style>

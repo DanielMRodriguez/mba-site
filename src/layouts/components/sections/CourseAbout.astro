@@ -7,13 +7,13 @@ import Title from "@/layouts/components/Title.astro";
   <div class="container">
     <div class="row">
       <div class="col-12 mb-16">
-        <Title title={title} align="center" tag="h2" />
+        <Title title={title} align="center" tag="h2" class="text-center"/>
       </div>
 
-      <div class="col-12 md:col-6">
+      <div class="col-12 md:col-6 order-2 order-md-1 mb-8 md:mb-0">
         <p set:html={description} />
       </div>
-      <div class="col-12 md:col-5 px-4 md:px-16">
+      <div class="col-12 md:col-5 px-4 md:px-16 order-1 order-md-2 mb-8 md:mb-0">
         <img src={image} alt={title} />
       </div>
     </div>

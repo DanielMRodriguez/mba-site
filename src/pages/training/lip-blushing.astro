@@ -1,0 +1,147 @@
+---
+import Hero from "@/components/Hero.astro";
+import Base from "@/layouts/Base.astro";
+import TrainingInfo from "@/layouts/components/sections/TrainingInfo.astro";
+import TrainingDetails from "@/layouts/components/sections/TrainingDetails.astro";
+import UpcomingTraining from "@/layouts/components/sections/UpcomingTraining.astro";
+
+const meta_datos = {
+  title: "Lip Blushing - Live Course",
+  meta_title:
+    "Basic Training - Pennsylvania",
+  description:
+    "Basic Training - Pennsylvania",
+};
+
+const hero = {
+  title: "Lip Blushing - Live Course",
+  subtitle:
+    "Basic Training - Pennsylvania",
+  cta: "Learn More",
+  cta_link: "#",
+  image_banner: "/images/tralip-blushing/banner-training-lip-blushin.png",  
+};
+
+const training_info = {
+  text: "<p class='text-center mb-16 text-2xl'>Discover the art of lip blushing in our live course, perfect your pout with expert techniques! This comprehensive training covers both theory and practice, starting with basic paper exercises, moving to latex practice, and concluding with work on live models. Each level ensures you master both the technical skills and artistry needed for flawless results.</p>",
+  title: "What You Will Learn",
+  subtitle:
+    "For best results and long-lasting effects, follow these aftercare tips:",
+  list: [
+    "✱ Introduction to Lip Blushing",
+    "✱ How to create perfect symmetry with compasses",
+    "✱ Lip design techniques",
+    "✱ Hygiene, safety, sanitation, and sterilization practices",
+    "✱ Preparing your workstation",
+    "✱ Complete aftercare guide (A-Z)",
+    "✱ Machines, needles, and correct tool usage",
+    "✱ Color theory fundamentals",
+    "✱ Completing treatment documentation",
+    "✱ Practice on live models",
+    "✱ 1-month 1:1 follow-up",
+    "✱ 6 months of support via WhatsApp",
+    "✱ Certificate of attendance and course logo",
+  ],
+};
+
+const training_details = {
+  meet_your_instructor: {
+    title:
+      "<h4 class='training-detail__title'>Meet Your Instructor<br>Master María Rivera</h4>",
+    resume:
+      "<p class='training-detail__resume-s'>Certified artist in multiple PMU techniques. Owner of MODERN BEAUTY ACA and mentor to future micropigmentation artists.<br> Holder of over 10 international certifications from PhiAcademy, one of the most prestigious academies in the beauty industry.<br> She has completed more than 1,200 procedures and trained dozens of new artists.<br> Known for her expertise, precision, and approachable teaching style, positioning her as one of the top Microblading and Powder Brows artists in Pennsylvania.</p>",
+    image: "/images/maria-rivera.png",
+  },
+  cards: [
+    {
+      title: "✱Your Professional Kit (Included)",
+      description: `<p class="mb-4">Includes a Professional Lip Kit valued at $900.</p>
+                    <ul>
+                      <li>- 6 different pigment colors</li>
+                      <li>- 3 practice latex sheets</li>
+                      <li>- 1 flat brush</li>
+                      <li>- Rotary machine</li>
+                      <li>- Power supply</li>
+                      <li>- 1 design concealer</li>
+                      <li>- 10 cartridges for the machine</li>
+                      <li>- 10 aftercare creams</li>
+                      <li>- 20 pigment cups</li>
+                    </ul>`,
+    },
+    {
+      title: "✱Course Detail",
+      description: `<ul>
+          <li>- Investment: $2,500 USD</li>
+          <li>- Certificate of attendance included</li>
+          <li>- Personalized course logo included</li>
+          <li>- Professional lip kit included</li>
+          <li>- 6 months of personalized support</li>
+          <li>- $500 non-refundable deposit required</li>
+          <li>- Potential earnings: $300-$600 USD per treatment</li>
+        </ul>`,
+    },
+  ],
+  gallery: [
+    "/images/gallery1.png",
+    "/images/gallery2.png",
+    "/images/gallery3.png",
+  ],
+};
+
+const upcoming_training = {
+  title: "Upcoming Dates",
+  description:
+    "Take the first step toward your PMU career. Join our Powder Brows training and start building your skills, confidence, and client base today.",
+  image: "/images/tramicroblading/upcomingdates.png",
+  ctas: [
+    {
+      label: "Reserve your spot",
+      link: "#",
+    },
+    {
+      label: "Contact Us",
+      link: "/#",
+    },
+  ],
+  dates: [
+    {
+      date: "2025-01-01",
+      location: "New York",
+    },
+    {
+      date: "2025-01-01",
+      location: "New York",
+    },
+  ],
+};
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <TrainingInfo info={training_info} />
+
+  <TrainingDetails
+    meet_your_instructor={training_details.meet_your_instructor}
+    cards={training_details.cards}
+    gallery={training_details.gallery}
+  />
+
+  <UpcomingTraining
+    title={upcoming_training.title}
+    description={upcoming_training.description}
+    image={upcoming_training.image}
+    ctas={upcoming_training.ctas}
+    dates={upcoming_training.dates}
+  />
+</Base>

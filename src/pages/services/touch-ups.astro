@@ -1,0 +1,85 @@
+---
+import Hero from "@/components/Hero.astro";
+import CourseAbout from "@/layouts/components/sections/CourseAbout.astro";
+import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
+import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
+import CourseDetail from "@/layouts/components/sections/CourseDetail.astro";
+import Base from "@/layouts/Base.astro";
+
+const meta_datos = {
+  title: "Touch-Up Services",
+  meta_title: "Maintain your perfect look with our professional touch-up sessions.",
+  description: "Maintain your perfect look with our professional touch-up sessions.",
+};
+
+const hero = {
+  title: "Touch-Up Services",
+  subtitle: "Maintain your perfect look with our professional touch-up sessions.",
+  cta: "Book Appointment",
+  cta_link: "/contact",
+  image_banner: "/images/touch-ups/touch-up-banner.png",
+};
+
+
+const course_about = {
+  title: "Why Touch-Ups Are Essential",
+  description: "<p class='mb-8'>Over time, pigment fades and natural changes in your skin can alter the appearance of your brows, lips, or lashes. Touch-up appointments are designed to refresh color, redefine shape, and keep your results looking flawless for months or even years.</p><p class='mb-8'>We recommend scheduling touch-ups as part of your long-term beauty routine, whether it's a quick refresh or a full maintenance session</p>",
+  img: "/images/touch-ups/aplicacion.webp",
+};
+
+
+const course_banner = {
+  title: "Eyeliner Styles We Offer",
+  paragraph:
+    "From brows to lips to lashes, our touch-up services ensure your beauty investment lasts. Schedule your session today and enjoy long-lasting, condent results.",
+  cta: "Book Now",
+  cta_link: "/contact",
+  image_banner: "/images/touch-ups/touch-up-banner.png",
+};
+
+
+
+const course_info = {
+  title: "How to Prepare for Your Appointment",
+  subtitle:
+    "Proper healing ensures great results. Follow these instructions:",
+  list: [
+    "✱ Avoid alcohol, caffeine, and blood thinners 24-48 hours prior",
+    "✱ Arrive with clean, makeup-free skin or lashes",
+    "✱ Stop using retinol, acids, and exfoliating products 1 week before",
+    "✱ For lip touch-ups, follow antiviral medication protocol if prone to cold sores",
+    "✱ Do not book during active skin irritation, sunburn, or infection"
+  ],
+};
+
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+ 
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <CourseAbout
+    title={course_about.title}
+    description={course_about.description}
+    image={course_about.img}
+  />
+  
+  <CourseBanner
+    title={course_banner.title}
+    paragraph={course_banner.paragraph}
+    cta={course_banner.cta}
+    cta_link={course_banner.cta_link}
+    image_banner={course_banner.image_banner}
+  />
+  <CourseInfo info={course_info} />
+</Base>

@@ -1,0 +1,81 @@
+---
+import CardOutlayerTraining from "@/layouts/components/CardOutlayerTraining.astro";
+const { meet_your_instructor, cards = [], gallery = [] } = Astro.props;
+---
+
+<section class="section training-detail">
+  <div class="container">
+    <div class="row mb-10">
+      <div class="md:col-6 col-12">
+        <div class="px-6 pb-6">
+          <img
+            src={meet_your_instructor.image}
+            alt={meet_your_instructor.title}
+            class="w-full object-contain"
+          />
+        </div>
+        
+      </div>
+
+      <div class="md:col-6 col-12">
+        <Fragment set:html={meet_your_instructor.title} />
+        <Fragment set:html={meet_your_instructor.resume} />
+      </div>
+      
+    </div>
+
+    <div class="row mb-14">
+      <div class="col-12">
+        <div class="training-detail__cards">
+          {
+              cards.map((item) => (
+                <CardOutlayerTraining
+                  title={item.title}
+                  description={item.description}
+                />
+              ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="gallery-grid">
+          {gallery.map((item) => <img src={item} alt="Moder Beauty Academy" />)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .training-detail {
+    background-color: #f2cece;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .training-detail__cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+  }
+  @media (max-width: 768px) {
+    .training-detail__cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .gallery-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  ul li {
+    margin-bottom: 10px;
+  }
+</style>

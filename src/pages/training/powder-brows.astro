@@ -1,0 +1,137 @@
+---
+import Hero from "@/components/Hero.astro";
+import Base from "@/layouts/Base.astro";
+import TrainingInfo from "@/layouts/components/sections/TrainingInfo.astro";
+import TrainingDetails from "@/layouts/components/sections/TrainingDetails.astro";
+import UpcomingTraining from "@/layouts/components/sections/UpcomingTraining.astro";
+
+const meta_datos = {
+  title: "Powder Brows – Basic Training",
+  meta_title:
+    "Learn the Powder Brows technique from scratch with hands-on training and personalized guidance.",
+  description:
+    "Learn the Powder Brows technique from scratch with hands-on training and personalized guidance.",
+};
+
+const hero = {
+  title: "Powder Brows – Basic Training",
+  subtitle:
+    "Learn the Powder Brows technique from scratch with hands-on training and personalized guidance.",
+  cta: "Book Appointment",
+  cta_link: "/contact",
+  image_banner: "/images/trapowder-brows/banner-powder.png",
+};
+
+const training_info = {
+  title: "What You Will Learn",
+  subtitle:
+    "For best results and long-lasting effects, follow these aftercare tips:",
+  list: [
+    "✱ Fundamentals of Powder Brows and how it differs from other brow techniques",
+    "✱ Perfect symmetry: using mapping tools for flawless brow design",
+    "✱ Pigment selection and color theory",
+    "✱ Hygiene, sterilization, and workstation preparation",
+    "✱ Machine handling, needle selection, and technique",
+    "✱ Practice on latex and live models",
+    "✱ Aftercare and client follow-up for the best healed results",
+  ],
+  text: "<p class='text-center mb-16 text-2xl'>This beginner-friendly course is designed for anyone who wants to start a career in the world of permanent makeup. You will learn everything from the fundamentals of the Powder Brows technique to working confidently on live models, so you can deliver professional results from day one.</p>",
+};
+
+const training_details = {
+  meet_your_instructor: {
+    title:
+      "<h4 class='training-detail__title'>Meet Your Instructor<br>Master María Rivera</h4>",
+    resume:
+      "<p class='training-detail__resume'>A certified expert in Powder Brows, Microblading, and Lip Blushing with years of experience and hundreds of trained students. Maria is passionate about teaching and ensuring every student leaves confident, skilled, and ready to work in the PMU industry.</p>",
+    image: "/images/maria-rivera.png",
+  },
+  cards: [
+    {
+      title: "✱Your Professional Kit (Included)",
+      description: `<p class="mb-4">A complete starter kit valued at $900 USD included at no extra cost:</p>
+                    <ul>
+                      <li>- PMU machine pen</li>
+                      <li>- Cartridges</li>
+                      <li>- Aftercare creams</li>
+                      <li>- Multiple pigment shades</li>
+                      <li>- Mapping and measuring tools</li>
+                      <li>- Cleaning and setup supplies</li>
+                    </ul>`,
+    },
+    {
+      title: "✱Course Detail",
+      description: `<ul>
+          <li>- PMU machine pen</li>
+          <li>- Cartridges</li>
+          <li>- Aftercare creams</li>
+          <li>- Multiple pigment shades</li>
+          <li>- Mapping and measuring tools</li>
+          <li>- Cleaning and setup supplies</li>
+        </ul>`,
+    },
+  ],
+  gallery: [
+    "/images/gallery1.png",
+    "/images/gallery2.png",
+    "/images/gallery3.png",
+  ],
+};
+
+const upcoming_training = {
+  title: "Upcoming Dates",
+  description:
+    "Take the first step toward your PMU career. Join our Powder Brows training and start building your skills, confidence, and client base today.",
+  image: "/images/trapowder-brows/upcomingdates.png",
+  ctas: [
+    {
+      label: "Reserve your spot",
+      link: "#",
+    },
+    {
+      label: "Contact Us",
+      link: "/#",
+    },
+  ],
+  dates: [
+    {
+      date: "2025-01-01",
+      location: "New York",
+    },
+    {
+      date: "2025-01-01",
+      location: "New York",
+    },
+  ],
+};
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <TrainingInfo info={training_info} />
+
+  <TrainingDetails
+    meet_your_instructor={training_details.meet_your_instructor}
+    cards={training_details.cards}
+    gallery={training_details.gallery}
+  />
+
+  <UpcomingTraining
+    title={upcoming_training.title}
+    description={upcoming_training.description}
+    image={upcoming_training.image}
+    ctas={upcoming_training.ctas}
+    dates={upcoming_training.dates}
+  />
+</Base>

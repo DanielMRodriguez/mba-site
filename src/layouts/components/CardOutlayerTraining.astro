@@ -1,0 +1,32 @@
+---
+const { title, description } = Astro.props;
+---
+
+<div class="card-Outlayer-training">
+  <div class="card-Outlayer-training-body">
+    <h3 class=" mb-4">{title}</h3>
+    <Fragment set:html={description} />
+  </div>
+</div>
+
+<style is:global>
+  .card-Outlayer-training {
+    font-size: 20px;
+    border: 3px solid #FF715E;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  h3{
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #FF715E;
+  }
+
+  .card-Outlayer-training-body {
+    color: #FF715E;
+    font-size: 16px;
+    font-weight: 400;
+  }
+</style>

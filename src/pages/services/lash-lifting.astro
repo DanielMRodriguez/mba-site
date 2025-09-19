@@ -1,0 +1,119 @@
+---
+import Hero from "@/components/Hero.astro";
+import CourseAbout from "@/layouts/components/sections/CourseAbout.astro";
+import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
+import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
+import CourseDetail from "@/layouts/components/sections/CourseDetail.astro";
+import Base from "@/layouts/Base.astro";
+
+const meta_datos = {
+  title: "Lash Lifting",
+  meta_title: "Naturally curled, lifted lashes that open up your eyes—no mascara needed.",
+  description: "Naturally curled, lifted lashes that open up your eyes—no mascara needed.",
+};
+
+const hero = {
+  title: "Lash Lifting",
+  subtitle: "Naturally curled, lifted lashes that open up your eyes—no mascara needed.",
+  cta: "Book Appointment",
+  cta_link: "/contact",
+  image_banner: "/images/lash-lifting/lash-lifting-banner.png",
+};
+
+
+const course_about = {
+  title: "All About Lash Lifting",
+  description: "<p class='mb-8'>Lash Lifting is a semi-permanent treatment that enhances your natural lashes by curling and lifting them from the base, giving you a wide-eyed, refreshed look. Unlike lash extensions, this service works with your own lashes—no maintenance appointments every few weeks and no risk of damage from adhesive.</p><p class='mb-8'>Results last 6-8 weeks, making it perfect for clients who want to save time in their daily routine while still enjoying beautiful, eye-opening lashes.</p>",
+  img: "/images/lash-lifting/el-maestro-peina-las-pestanas-de-una.png",
+};
+
+const course_detail = {
+  title: "Lash Lift Styles",
+  text: "Choose the curl and finish that fits your look and lifestyle. We customize the curl level to match your eye shape and natural lash length.",
+  card_list: [
+    {
+      title: "Natural Curl Lift",
+      description:
+        "Soft and subtle curl for a more relaxed, everyday look. Perfect for clients who want a natural enhancement.",
+    },
+    {
+      title: "Dramatic Curl Lift",
+      description:
+        "A stronger lift that gives a wide-eyed effect and maximum lash visibility. Ideal for those who want a more glamorous appearance.",
+    },
+  ],
+  list_title: "How to Prepare for Your Appointment",
+  list_subtitle: "",
+  list_items: [
+    "<span class='color-primary'>✱</span> Arrive with clean, makeup-free lashes.",
+    "<span class='color-primary'>✱</span> Avoid waterproof mascara or lash curlers 48 hours prior.",
+    "<span class='color-primary'>✱</span> Remove contact lenses before the session.",
+    "<span class='color-primary'>✱</span> Do not use lash serums for at least 48 hours before the appointment.",
+    "<span class='color-primary'>✱</span> Avoid caffeine right before your session to minimize eye movement.",
+  ],
+};
+
+const course_banner = {
+  title: "Your Perfect Lips - Every Morning",
+  paragraph:
+    "Skip the lipstick and enjoy naturally beautiful lips with our Lip Blushing service. Customized to your style, safe, and long-lasting.",
+  cta: "Book Now",
+  cta_link: "/contact",
+  image_banner: "/images/lash-lifting/lash-lifting-banner.png",
+};
+
+
+
+const course_info = {
+  title: "Lip Blushing Aftercare Guide",
+  subtitle:
+    "Proper healing ensures great results. Follow these instructions:",
+  list: [
+    "✱ Keep lips clean and dry for the first 24 hours",
+    "✱ Apply the provided healing ointment 2-3 times daily for 7 days",
+    "✱ Avoid kissing, pools, saunas, and heavy sweating during the healing period",
+    "✱ Expect some flaking—do not pick or peel",
+    "✱ Color will fade 30-50% after healing; this is normal",
+    "✱ Avoid lipstick or makeup on lips for 10 days",
+    "✱ Always use SPF lip balm after healing to protect color",
+  ],
+};
+
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+ 
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <CourseAbout
+    title={course_about.title}
+    description={course_about.description}
+    image={course_about.img}
+  />
+  <CourseDetail
+    title={course_detail.title}
+    text={course_detail.text}
+    card_list={course_detail.card_list}
+    list_items={course_detail.list_items}
+    list_title={course_detail.list_title}
+    list_subtitle={course_detail.list_subtitle}
+  />
+  <CourseBanner
+    title={course_banner.title}
+    paragraph={course_banner.paragraph}
+    cta={course_banner.cta}
+    cta_link={course_banner.cta_link}
+    image_banner={course_banner.image_banner}
+  />
+  <CourseInfo info={course_info} />
+</Base>

@@ -6,7 +6,7 @@
     },
     {
       "name": "Services",
-      "url": "",
+      "url": "#",
       "hasChildren": true,
       "children": [
         {
@@ -67,15 +67,8 @@
         {
           "name": "Lip Blushing Training",
           "url": "/training/lip-blushing"
-        },
-        {
-          "name": "Online Lash Lifting Training",
-          "url": "/training/online-lash-lifting"
-        },
-        {
-          "name": "Online Microblading Training",
-          "url": "/training/online-microblading"
         }
+     
       ]
     },
     {
@@ -84,7 +77,7 @@
     },
     {
       "name": "Blog",
-      "url": "/contact"
+      "url": "/blog"
     }
   ],
 

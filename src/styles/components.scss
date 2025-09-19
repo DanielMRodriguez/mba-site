@@ -715,7 +715,7 @@ select:invalid {
 .btn-primary, .button-primary {
   background-color: #ED9989;
   color: #fff;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 14px 0px 14px 0px;
   text-decoration: none;
   text-align: center;
@@ -723,12 +723,13 @@ select:invalid {
   border: none;
   transition: all 0.3s ease;
   font-weight: 400;
+  border: 1px solid #ED9989;
 }
 
 .btn-primary:hover, .button-primary:hover {
   background-color: #fff;
   color: #ED9989;
-  border: 1px solid #ED9989;
+ 
   transition: all 0.3s ease;
 }
 
@@ -738,4 +739,47 @@ select:invalid {
 
 .course-about p{
   font-size: 24px;
+}
+
+.training-detail__title{
+  color: #27252A;
+  font-size: 29px;
+  margin-bottom: 20px;
+}
+
+.training-detail__resume{
+
+  font-size: 21px
+}
+
+.training-detail__resume-s{
+  font-size: 18px;
+  color: #27252A;
+}
+
+.card-Outlayer-training-body p{
+  font-size: 18px;
+  font-weight: 700;
+  color: #FF715E;
+}
+
+.card-Outlayer-training-body ul{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #FF715E;
+}
+
+.card-Outlayer-training-body ul li{
+  margin-bottom: 4px
+}
+
+.cards-container{
+  margin-bottom: 20px;
+
+}
+
+.eyerlin-training-page .card-Outlayer{
+ height: 100%;
+
 }

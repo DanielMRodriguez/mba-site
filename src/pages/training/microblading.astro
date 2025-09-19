@@ -1,0 +1,151 @@
+---
+import Hero from "@/components/Hero.astro";
+import Base from "@/layouts/Base.astro";
+import TrainingInfo from "@/layouts/components/sections/TrainingInfo.astro";
+import TrainingDetails from "@/layouts/components/sections/TrainingDetails.astro";
+import UpcomingTraining from "@/layouts/components/sections/UpcomingTraining.astro";
+
+const meta_datos = {
+  title: "Microblading and Microshading Class",
+  meta_title:
+    "Basic Training - Spanish/English in Pennsylvania & New Jersey",
+  description:
+    "Basic Training - Spanish/English in Pennsylvania & New Jersey",
+};
+
+const hero = {
+  title: "Microblading and Microshading Class",
+  subtitle:
+    "Basic Training - Spanish/English in Pennsylvania & New Jersey",
+  cta: "Book Appointment",
+  cta_link: "/contact",
+  image_banner: "/images/tramicroblading/banner-powder.png",
+};
+
+const training_info = {
+  title: "What You Will Learn",
+  subtitle:
+    "For best results and long-lasting effects, follow these aftercare tips:",
+  list: [
+    "✱ Introduction to microblading and industry fundamentals",
+    "✱ Eyebrow design and selection for different face shapes",
+    "✱ Achieving perfect symmetry using BB Compass",
+    "✱ Hygiene, sanitation, and sterilization procedures",
+    "✱ Setting up your professional workspace",
+    "✱ Aftercare protocols from A to Z",
+    "✱ Machines, needles, and tools: proper usage and techniques",
+    "✱ Pigment selection and color theory",
+    "✱ Hands-on practice with live models under trainer supervision",
+  ],
+  text: "<p class='text-center mb-16 text-2xl'>Immerse yourself in the world of microblading, a cutting-edge technique that has transformed the beauty industry by creating hyper-realistic eyebrow designs. This training is designed to provide you with comprehensive, step-by-step instruction, guided by certified microblading professionals. Whether you are a beginner eager to start your career or an experienced artist seeking to refine your skills, you'll gain the knowledge, techniques, and confidence to master this art.</p><p class='text-center mb-16 text-2xl'>Discover how to create natural, symmetrical, and long-lasting brows that enhance your clients' beauty.</p>",
+};
+
+const training_details = {
+  meet_your_instructor: {
+    title:
+      "<h4 class='training-detail__title'>Meet Your Instructor<br>Master María Rivera</h4>",
+    resume:
+      "<p class='training-detail__resume-s'>Certified artist in multiple PMU techniques. Owner of MODERN BEAUTY ACA and mentor to future micropigmentation artists. Holder of over 10 international certifications from PhiAcademy, one of the most prestigious academies in the beauty industry. She has completed more than 1,200 procedures and trained dozens of new artists. Known for her expertise, precision, and approachable teaching style, positioning her as one of the top Microblading and Powder Brows artists in Pennsylvania.</p>",
+    image: "/images/maria-rivera-1.png",
+  },
+  cards: [
+    {
+      title: "✱Your Professional Kit (Included)",
+      description: `<p class="mb-4">Microblading Premium Kit (Valued at $900 - FREE with course)</p>
+                    <ul>
+                      <li>- Mast PMU Machine</li>
+                      <li>- Disposable cartridges</li>
+                      <li>- Microblading disposable blades</li>
+                      <li>- BB Compass</li>
+                      <li>- Practice latex skins for microblading</li>
+                      <li>- Aftercare ointment</li>
+                      <li>- Professional PMU pigments</li>
+                      <li>- Drawing pencil</li>
+                      <li>- Pigment cup holder</li>
+                      <li>- Complete Microblading Manual with theory and exercises</li>
+                    </ul>`,
+    },
+    {
+      title: "✱Course Detail",
+      description: `<ul>
+          <li>- Premium Course Investment: $3,100 USD</li>
+          <li>- Course Duration: 8 Weeks</li>
+          <li>- Training Schedule: Saturday & Sunday 9am-5pm</li>
+          <li>- 4 Extra Perfection Classes</li>
+          <li>- Live Model Practice</li>
+          <li>- 6 Months WhatsApp Support</li>
+          <li>- Certificate of Attendance</li>
+          <li>- Premium Microblading Kit ($900 value - FREE)</li>
+          <li>- Shading Machine Training</li>
+          <li>- Online Microblading Course Access</li>
+          <li>- Logo Design</li>
+          <li>- Microblading Manual</li>
+          <li>- Snacks Provided</li>
+          <li>- $500 Non-refundable Deposit Required</li>
+        </ul>`,
+    },
+  ],
+  gallery: [
+    "/images/gallery1.png",
+    "/images/gallery2.png",
+    "/images/gallery3.png",
+  ],
+};
+
+const upcoming_training = {
+  title: "Upcoming Dates",
+  description:
+    "Take the first step toward your PMU career. Join our Powder Brows training and start building your skills, confidence, and client base today.",
+  image: "/images/tramicroblading/upcomingdates.png",
+  ctas: [
+    {
+      label: "Reserve your spot",
+      link: "#",
+    },
+    {
+      label: "Contact Us",
+      link: "/#",
+    },
+  ],
+  dates: [
+    {
+      date: "2025-01-01",
+      location: "New York",
+    },
+    {
+      date: "2025-01-01",
+      location: "New York",
+    },
+  ],
+};
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <TrainingInfo info={training_info} />
+
+  <TrainingDetails
+    meet_your_instructor={training_details.meet_your_instructor}
+    cards={training_details.cards}
+    gallery={training_details.gallery}
+  />
+
+  <UpcomingTraining
+    title={upcoming_training.title}
+    description={upcoming_training.description}
+    image={upcoming_training.image}
+    ctas={upcoming_training.ctas}
+    dates={upcoming_training.dates}
+  />
+</Base>

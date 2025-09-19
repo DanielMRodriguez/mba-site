@@ -44,51 +44,50 @@ const { pathname } = Astro.url;
     <div class="fullscreen-menu__content">
       <nav class="fullscreen-nav">
         <ul class="fullscreen-nav__list">
-          {main.map((item) => (
-            <li class="fullscreen-nav__item">
-              {item.hasChildren ? (
-                <div class="fullscreen-nav__dropdown">
-                  <span class="fullscreen-nav__link fullscreen-nav__link--parent">
+          {
+            main.map((item) => (
+              <li class="fullscreen-nav__item">
+                {item.hasChildren ? (
+                  <div class="fullscreen-nav__dropdown">
+                    <span class="fullscreen-nav__link fullscreen-nav__link--parent">
+                      <a href={item.url}>{item.name}</a>
+                    </span>
+                    <ul class="fullscreen-nav__submenu">
+                      {item.children?.map((child) => (
+                        <li class="fullscreen-nav__subitem">
+                          <a
+                            href={child.url}
+                            class={`fullscreen-nav__link fullscreen-nav__link--child ${pathname === child.url ? "active" : ""}`}
+                          >
+                            {child.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <a
+                    href={item.url}
+                    class={`fullscreen-nav__link ${pathname === item.url ? "active" : ""}`}
+                  >
                     {item.name}
-                  </span>
-                  <ul class="fullscreen-nav__submenu">
-                    {item.children?.map((child) => (
-                      <li class="fullscreen-nav__subitem">
-                        <a 
-                          href={child.url} 
-                          class={`fullscreen-nav__link fullscreen-nav__link--child ${pathname === child.url ? 'active' : ''}`}
-                        >
-                          {child.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : (
-                <a 
-                  href={item.url} 
-                  class={`fullscreen-nav__link ${pathname === item.url ? 'active' : ''}`}
-                >
-                  {item.name}
-                </a>
-              )}
-            </li>
-          ))}
+                  </a>
+                )}
+              </li>
+            ))
+          }
         </ul>
       </nav>
     </div>
   </div>
 </header>
 
-
-
-
 <script is:inline>
   let menu = document.getElementById("menu");
   let fullscreenMenu = document.getElementById("fullscreen-menu");
   let toggleMenu = false;
   let toggleNoAni = true;
-  
+
   menu.addEventListener("click", () => {
     if (toggleMenu) {
       menu.classList.remove("open");
@@ -112,10 +111,10 @@ const { pathname } = Astro.url;
   });
 
   // Close menu when clicking on a link
-  const menuLinks = document.querySelectorAll('.fullscreen-nav__link');
-  menuLinks.forEach(link => {
-    if (link.tagName === 'A') {
-      link.addEventListener('click', () => {
+  const menuLinks = document.querySelectorAll(".fullscreen-nav__link");
+  menuLinks.forEach((link) => {
+    if (link.tagName === "A") {
+      link.addEventListener("click", () => {
         menu.classList.remove("open");
         fullscreenMenu.classList.remove("active");
         document.body.classList.remove("menu-open");

@@ -1,0 +1,120 @@
+---
+import Hero from "@/components/Hero.astro";
+import CourseAbout from "@/layouts/components/sections/CourseAbout.astro";
+import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
+import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
+import CourseDetail from "@/layouts/components/sections/CourseDetail.astro";
+import Base from "@/layouts/Base.astro";
+
+const meta_datos = {
+  title: "Lip Blushing",
+  meta_title: "Define, brighten, and enhance your lips with a kiss of color.",
+  description: "Define, brighten, and enhance your lips with a kiss of color.",
+};
+
+const hero = {
+  title: "Lip Blushing",
+  subtitle: "Define, brighten, and enhance your lips with a kiss of color.",
+  cta: "Book Appointment",
+  cta_link: "/contact",
+  image_banner: "/images/lip-blushing/lip-bloshing-banner.png",
+};
+
+
+const course_about = {
+  title: "All About Lip Blushing",
+  description: "<p class='mb-8'>Lip Blushing is a semi-permanent cosmetic tattoo that enhances the natural color and shape of your lips, giving them a healthy, youthful tint. This treatment defines the borders, corrects asymmetry, and creates the illusion of fuller lips without fillers.</p><p class='mb-8'>The result is a soft, natural wash of color that looks like your lips—only better. Perfect for clients who want to skip daily lipstick but still enjoy a polished, fresh look.</p>",
+  img: "/images/lip-blushing/inyecciones-de-mujer-y-belleza.png",
+};
+
+const course_detail = {
+  title: "Lip Blushing Styles",
+  text: "We tailor the tone and coverage to your style and skin tone. olor options range from soft pinks to warm nudes, corals, and berry tones, all custom-mixed for you.",
+  card_list: [
+    {
+      title: "Sheer Natural Tint",
+      description:
+        "A subtle wash of color that enhances your natural lip tone without looking like makeup. Great for a fresh, everyday look.",
+    },
+    {
+      title: "Full Lip Color",
+      description:
+        "A subtle wash of color that enhances your natural lip tone without looking like makeup. Great for a fresh, everyday look.",
+    },
+  ],
+  list_title: "How to Prepare for Your Appointment",
+  list_subtitle: "",
+  list_items: [
+    "<span class='color-primary'>✱</span> If you have a history of cold sores, take antiviral medication 3 days before and after treatment.",
+    "<span class='color-primary'>✱</span> Gently exfoliate and keep lips hydrated for at least 3 days prior.",
+    "<span class='color-primary'>✱</span> Avoid alcohol, caffeine, and blood thinners 24-48 hours before.",
+    "<span class='color-primary'>✱</span> No lip filler treatments for at least 4 weeks prior.",
+    "<span class='color-primary'>✱</span> Arrive with clean, makeup-free lips.",
+    "<span class='color-primary'>✱</span> Avoid getting sunburned or chapped lips before the procedure.",
+  ],
+};
+
+const course_banner = {
+  title: "Your Perfect Lips - Every Morning",
+  paragraph:
+    "Skip the lipstick and enjoy naturally beautiful lips with our Lip Blushing service. Customized to your style, safe, and long-lasting.",
+  cta: "Book Now",
+  cta_link: "/contact",
+  image_banner: "/images/lip-blushing/lip-bloshing-banner.png",
+};
+
+
+
+const course_info = {
+  title: "Lip Blushing Aftercare Guide",
+  subtitle:
+    "Proper healing ensures great results. Follow these instructions:",
+  list: [
+    "✱ Keep lips clean and dry for the first 24 hours",
+    "✱ Apply the provided healing ointment 2-3 times daily for 7 days",
+    "✱ Avoid kissing, pools, saunas, and heavy sweating during the healing period",
+    "✱ Expect some flaking—do not pick or peel",
+    "✱ Color will fade 30-50% after healing; this is normal",
+    "✱ Avoid lipstick or makeup on lips for 10 days",
+    "✱ Always use SPF lip balm after healing to protect color",
+  ],
+};
+
+---
+
+<Base
+  title={meta_datos.title}
+  meta_title={meta_datos.meta_title}
+  description={meta_datos.description}
+ 
+>
+  <Hero
+    title={hero.title}
+    subtitle={hero.subtitle}
+    cta={hero.cta}
+    image_banner={hero.image_banner}
+    cta_link={hero.cta_link}
+  />
+
+  <CourseAbout
+    title={course_about.title}
+    description={course_about.description}
+    image={course_about.img}
+  />
+  <CourseDetail
+    title={course_detail.title}
+    text={course_detail.text}
+    card_list={course_detail.card_list}
+    list_items={course_detail.list_items}
+    list_title={course_detail.list_title}
+    list_subtitle={course_detail.list_subtitle}
+  />
+  <CourseBanner
+    title={course_banner.title}
+    paragraph={course_banner.paragraph}
+    cta={course_banner.cta}
+    cta_link={course_banner.cta_link}
+    image_banner={course_banner.image_banner}
+  />
+  <CourseInfo info={course_info} />
+</Base>

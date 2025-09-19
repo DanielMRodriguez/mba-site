@@ -1,0 +1,91 @@
+---
+import Base from "@/layouts/Base.astro";
+import Hero from "@/layouts/components/Hero.astro";
+import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
+import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
+import DetailTrainingSection from "@/layouts/components/sections/DetailTrainingSection.astro";
+import CourseAbout from "@/layouts/components/sections/CourseAbout.astro";
+
+const hero = {
+  title: "Touch-Up Services",
+  subtitle:
+    "Maintain your perfect look with our professional touch-up sessions.  ",
+  image_banner: "/images/tramicroblading/upcomingdates.png",
+  icon: "",
+  cta: "Book Appointment",
+  cta_link: "#",
+};
+
+const course_about = {
+  title: "Why Touch-Ups Are Essential",
+  description:
+    "Over time, pigment fades and natural changes in your skin can alter the appearance of your brows, lips, or lashes. Touch-up appointments are designed to refresh color, redefine shape, and keep your results looking flawless for months or even years. We recommend scheduling touch-ups as part of your long-term beauty routine, whether it's a quick refresh or a full maintenance session ",
+  img: "/images/touch-ups/aplicacion.webp",
+};
+
+const course_banner = {
+  title: "Keep Your Look Fresh and Flawless",
+  paragraph:
+    "From brows to lips to lashes, our touch-up services ensure your beauty investment lasts. Schedule your session today and enjoy long-lasting, condent results.",
+  cta: "Book Now",
+  cta_link: "#",
+  image_banner: "/images/tramicroblading/upcomingdates.png",
+};
+const cards = [
+  {
+    title: "Classic Eyeliner",
+    description:
+      "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+    cta: "·",
+    label: "Book Now",
+  },
+  {
+    title: "Classic Eyeliner",
+    description:
+      "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+    cta: "·",
+    label: "Book Now",
+  },
+  {
+    title: "Classic Eyeliner",
+    description:
+      "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+    cta: "·",
+    label: "Book Now",
+  },
+  {
+    title: "Lash Liner",
+    description:
+      "A subtle, natural look that defines the lash line without a strong outline. Ideal for those who want sparse lashes with depth and definition without the drama.",
+    cta: "·",
+    label: "Book Now",
+  },
+];
+
+const info = {
+  title: "How to Prepare for Your Appointment",
+  subtitle: "",
+  list: [
+    "✱ Avoid alcohol, caffeine, and blood thinners 24-48 hours prior",
+    "✱ Arrive with clean, makeup-free skin or lashes",
+    "✱ Stop using retinol, acids, and exfoliating products 1 week before",
+    "✱ For lip touch-ups, follow antiviral medication protocol if you're prone to cold sores",
+    "✱ Do not book during active skin irritation, sunburn, or infection",
+  ],
+};
+---
+
+<Base>
+  <Hero {...hero} />
+  <CourseAbout
+    title={course_about.title}
+    description={course_about.description}
+    image={course_about.img}
+  />
+
+  <DetailTrainingSection title="Eyeliner Styles We Offer" cards={cards} />
+
+  <CourseBanner {...course_banner} />
+
+  <CourseInfo info={info} />
+</Base>
