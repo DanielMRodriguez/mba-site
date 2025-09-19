@@ -8,10 +8,10 @@ const { title, subtitle, list } = info;
   <div class="container">
     <div class="row">
       <div class="col-12 md:col-6">
-        <h2 class="mb-6">{title}</h2>
-        <p class="mb-6">{subtitle}</p>
+        <h2 class="mb-6 animate-slide-in-left">{title}</h2>
+        <p class="mb-6 animate-slide-in-left">{subtitle}</p>
         <ul>
-          {list.map((item: String) => <li class="mb-4">{item}</li>)}
+          {list.map((item: String) => <li class="mb-4 animate-slide-in-left">{item}</li>)}
         </ul>
       </div>
 

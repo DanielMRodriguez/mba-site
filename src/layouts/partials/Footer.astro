@@ -13,14 +13,14 @@ const { copyright, location, email, phone, footer_description } = config.params;
   <div class="container">
     <div class="gx-5 row pb-10 pt-[52px]">
       <div class="col-12 mt-12 md:col-6 lg:col-2" data-aos="fade-up" data-aos-delay="100">
-        <img src="/images/home/logo-claro.svg" alt="Moder Beauty Academy" />
+        <img src="/images/home/logo-claro.svg" alt="Moder Beauty Academy" class="animate-slide-in-up"/>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-2" data-aos="fade-up" data-aos-delay="200">
-        <h6 class="text-[#FF715E]">SERVICES</h6>
+        <h6 class="text-[#FF715E] animate-slide-in-up">SERVICES</h6>
         <ul>
           {
             footer.map((item, i) => (
-              <li class={footer.length - 1 === i ? "mb-0" : "mb-0"}>
+              <li class={footer.length - 1 === i ? "mb-0 animate-slide-in-up" : "mb-0 animate-slide-in-up"}>
                 <a class="text-[#FF715E]  hover:underline " href={item.url}>
                   {item.name}
                 </a>
@@ -31,11 +31,11 @@ const { copyright, location, email, phone, footer_description } = config.params;
       </div>
 
       <div class="col-12 mt-12 md:col-6 lg:col-2" data-aos="fade-up" data-aos-delay="300">
-        <h6 class="text-[#FF715E]">TRAINING</h6>
+        <h6 class="text-[#FF715E] animate-slide-in-up">TRAINING</h6>
         <ul>
           {
             footer_training.map((item, i) => (
-              <li class={footer.length - 1 === i ? "mb-0" : "mb-0"}>
+              <li class={footer.length - 1 === i ? "mb-0 animate-slide-in-up" : "mb-0 animate-slide-in-up"}>
                 <a class="text-[#FF715E]  hover:underline " href={item.url}>
                   {item.name}
                 </a>
@@ -46,11 +46,11 @@ const { copyright, location, email, phone, footer_description } = config.params;
       </div>
 
       <div class="col-12 mt-12 md:col-6 lg:col-3" data-aos="fade-up" data-aos-delay="400">
-        <h6 class="text-[#FF715E]">HELP</h6>
+        <h6 class="text-[#FF715E] animate-slide-in-up">HELP</h6>
         <ul>
           {
             footer_help.map((item, i) => (
-              <li class={footer.length - 1 === i ? "mb-0" : "mb-0"}>
+              <li class={footer.length - 1 === i ? "mb-0 animate-slide-in-up" : "mb-0 animate-slide-in-up"}>
                 <a class="text-[#FF715E]  hover:underline " href={item.url}>
                   {item.name}
                 </a>
@@ -61,7 +61,7 @@ const { copyright, location, email, phone, footer_description } = config.params;
       </div>
 
       <div class="col-12 mt-12 md:col-6 lg:col-3" data-aos="fade-up" data-aos-delay="500">
-        <h6 class="text-[#FF715E]">FOLLOW US</h6>
+        <h6 class="text-[#FF715E] animate-slide-in-up">FOLLOW US</h6>
 
         <Social source={social} className="social-icons mt-4 lg:mt-6" />
       </div>
@@ -71,7 +71,7 @@ const { copyright, location, email, phone, footer_description } = config.params;
     <div
       class="footer-copyright mx-auto border-t border-border pb-1 pt-1 text-center"
     >
-      <p class="content text-white text-sm opacity-50" set:html={copyright} />
+      <p class="content text-white text-sm opacity-50 animate-slide-in-up" set:html={copyright} />
     </div>
   </div>
 </footer>

@@ -11,19 +11,19 @@ const { title, subtitle, image_banner, icon , cta, cta_link} = Astro.props;
   <div class="container hero__content">
     <div class="row">
       <div class="col-12">
-        <div class="h-24 text-white text-center" data-aos="fade-down">
+        <div class="h-24 text-white text-center animate-slide-in-down" >
           <div class="text-white inline-block">
             {icon ? <Icon name={icon} /> : null}
           </div>
         </div>
-        <h1 class="text-center text-white" data-aos="fade-up" data-aos-delay="200">{title}</h1>
-        <div class="hero__content-subtitle" data-aos="fade-up" data-aos-delay="400">
-            <h2 class="text-center text-white">
+        <h1 class="text-center text-white animate-slide-in-up" >{title}</h1>
+        <div class="hero__content-subtitle" >
+            <h2 class="text-center text-white animate-slide-in-up">
                 {subtitle}
             </h2>
         </div>
-        <div class="text-center pt-5" data-aos="fade-up" data-aos-delay="600">
-          {cta ? <a class="btn btn-primary" href={cta_link}>{cta}</a> : null}
+        <div class="text-center pt-5" >
+          {cta ? <a class="btn btn-primary animate-slide-in-up" href={cta_link}>{cta}</a> : null}
         </div>
       </div>
     </div>

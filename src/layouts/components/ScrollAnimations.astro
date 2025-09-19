@@ -1,0 +1,117 @@
+---
+// ScrollAnimations.astro - Advanced scroll animation system using GSAP
+---
+
+<script>
+  // @ts-ignore
+  import { gsap } from 'gsap';
+
+  // Define animation presets
+  const animationPresets: Record<string, { from: Record<string, number>, to: Record<string, number> }> = {
+    'fade-in': {
+      from: { opacity: 0 },
+      to: { opacity: 1 }
+    },
+    'slide-in-left': {
+      from: { x: -100, opacity: 0 },
+      to: { x: 0, opacity: 1 }
+    },
+    'slide-in-right': {
+      from: { x: 100, opacity: 0 },
+      to: { x: 0, opacity: 1 }
+    },
+    'slide-in-up': {
+      from: { y: 100, opacity: 0 },
+      to: { y: 0, opacity: 1 }
+    },
+    'slide-in-down': {
+      from: { y: -100, opacity: 0 },
+      to: { y: 0, opacity: 1 }
+    },
+    'zoom-in': {
+      from: { scale: 0.5, opacity: 0 },
+      to: { scale: 1, opacity: 1 }
+    },
+    'rotate-in': {
+      from: { rotation: -180, opacity: 0 },
+      to: { rotation: 0, opacity: 1 }
+    }
+  };
+
+  // Function to apply animation to an element
+  function applyAnimation(element: HTMLElement, animationType: string) {
+    const preset = animationPresets[animationType];
+    if (!preset) return;
+
+    // Get data attributes
+    const duration = parseFloat(element.dataset.duration || '1');
+    const delay = parseFloat(element.dataset.delay || '0');
+    const easing = element.dataset.easing || 'power2.out';
+    const repeat = element.dataset.repeat === 'true';
+    const direction = element.dataset.direction || 'in';
+
+    // Set initial state
+    gsap.set(element, preset.from);
+
+    // Create animation
+    const animation = gsap.to(element, {
+      ...preset.to,
+      duration,
+      delay,
+      ease: easing,
+      paused: true
+    });
+
+    // Intersection Observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animation.play();
+            if (!repeat) {
+              observer.unobserve(element);
+            }
+          } else if (repeat && direction === 'bidirectional') {
+            // For bidirectional, animate out when leaving
+            gsap.to(element, {
+              ...preset.from,
+              duration,
+              ease: easing
+            });
+          }
+        });
+      },
+      {
+        threshold: parseFloat(element.dataset.trigger || '0.1')
+      }
+    );
+
+    observer.observe(element);
+  }
+
+  // Initialize animations on load and after DOM updates
+  function initAnimations() {
+    const animatedElements = document.querySelectorAll('[class*="animate-"]');
+    animatedElements.forEach((element) => {
+      const classes = element.className.split(' ');
+      const animationClass = classes.find(cls => cls.startsWith('animate-'));
+      if (animationClass) {
+        const animationType = animationClass.replace('animate-', '');
+        applyAnimation(element as HTMLElement, animationType);
+      }
+    });
+  }
+
+  // Run on load
+  document.addEventListener('DOMContentLoaded', initAnimations);
+
+  // Also run after Astro hydration or dynamic content
+  document.addEventListener('astro:page-load', initAnimations);
+</script>
+
+<!-- Usage Examples -->
+<!-- 
+<div class="animate-fade-in" data-duration="1.5" data-delay="0.5">Fade in content</div>
+<div class="animate-slide-in-left" data-duration="1" data-delay="0" data-easing="power2.out" data-trigger="0.2">Slide from left</div>
+<div class="animate-zoom-in" data-repeat="true" data-direction="bidirectional">Zoom with repeat</div>
+-->

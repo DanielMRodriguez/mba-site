@@ -14,16 +14,16 @@ const { title, paragraph, cta = "", cta_link = "", image_banner = "" } = Astro.p
   <div class="container banner-course-content">
     <div class="row">
       <div class="col-12">
-        <h2 class="text-white text-center mb-4">{title}</h2>
+        <h2 class="text-white text-center mb-4 animate-slide-in-up">{title}</h2>
         <div class="w-full md:w-1/2 mb-5 mx-auto">
-          <p class="text-white text-center font-title">
+          <p class="text-white text-center font-title animate-slide-in-up">
             {paragraph}
           </p>
         </div>
         {
           cta && (
             <div class="text-center">
-              <a class="btn btn-primary" href={cta_link}>
+              <a class="btn btn-primary animate-slide-in-up" href={cta_link}>
                 {cta}
               </a>
             </div>

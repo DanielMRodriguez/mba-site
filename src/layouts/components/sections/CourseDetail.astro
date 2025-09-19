@@ -9,10 +9,10 @@ const { title, text, card_list, list_items, list_title, list_subtitle } =
   <div class="container">
     <div class="row mb-20">
       <div class="col-12">
-        <h2 class="text-white mb-4">{title}</h2>
+        <h2 class="text-white mb-4 animate-slide-in-left">{title}</h2>
       </div>
-      <div class="col-12 md:col-5">
-        <p class="text-white">
+      <div class="col-12 md:col-5 mb-10">
+        <p class="text-white animate-slide-in-left">
           {text}
         </p>
       </div>
@@ -31,20 +31,19 @@ const { title, text, card_list, list_items, list_title, list_subtitle } =
     </div>
     <div class="row">
       <div class="col-12">
-        <h4 class="text-white mb-4">{list_title}</h4>
+        <h4 class="text-white mb-4 animate-slide-in-left">{list_title}</h4>
       </div>
       <div class="col-12 md:col-6">
-        <p class="text-white mb-5">
+        <p class="text-white mb-5 animate-slide-in-left">
           {list_subtitle}
         </p>
 
         <ul>
-            {
-                list_items.map((item) => (
-                    <li class="text-white" set:html={item}>
-                    </li>
-                ))
-            }
+          {
+            list_items.map((item) => (
+              <li class="text-white animate-slide-in-left" set:html={item}></li>
+            ))
+          }
         </ul>
       </div>
       <div class="col-12 md:col-6">
@@ -64,8 +63,13 @@ const { title, text, card_list, list_items, list_title, list_subtitle } =
     gap: 20px;
   }
 
- ul li {
+  ul li {
     margin-bottom: 10px;
- }
-  
+  }
+
+  @media (max-width: 768px) {
+    .course-detail__cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 </style>

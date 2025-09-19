@@ -57,7 +57,7 @@ const signature_services = [
       </div>
 
       <div class="col-12 text-center">
-        <a href="#" class="btn btn-blanco-xl">
+        <a href="#" class="btn btn-blanco-xl animate-slide-in-up">
             View All services
         </a>
       </div>
@@ -78,6 +78,13 @@ const signature_services = [
     grid-template-columns: repeat(2, 1fr);
     gap: 80px;
     gap-rows: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .our-signature-services__cards {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
   }
 
   /* #FEC0C0 */

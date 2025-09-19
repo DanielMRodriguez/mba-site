@@ -1,18 +1,18 @@
 // navbar toggler
-input#nav-toggle:checked ~ label#show-button {
+input#nav-toggle:checked~label#show-button {
   @apply hidden;
 }
 
-input#nav-toggle:checked ~ label#hide-button {
+input#nav-toggle:checked~label#hide-button {
   @apply flex lg:hidden;
 }
 
-input#nav-toggle:checked ~ #nav-menu {
+input#nav-toggle:checked~#nav-menu {
   @apply block lg:flex;
 }
 
 .header {
-  @apply sticky top-0 z-50  bg-white py-3 transition-all duration-300 lg:bg-transparent;
+  @apply sticky top-0 z-50 bg-white py-3 transition-all duration-300 lg:bg-transparent;
 
   &-sticky {
     @apply bg-white shadow;
@@ -26,6 +26,7 @@ input#nav-toggle:checked ~ #nav-menu {
 
 .navbar-brand {
   @apply text-xl font-semibold text-dark;
+
   image {
     @apply max-h-full max-w-full;
   }
@@ -52,7 +53,7 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 
 .nav-dropdown-list {
-  @apply z-10 mx-auto ml-1 mt-4 max-w-[300px] rounded-lg border-0 border-solid  border-primary/25 bg-primary/5 px-4 py-3  shadow-sm duration-300  lg:mt-0 lg:border lg:bg-white lg:shadow-[0_0.9rem_1.56rem_rgb(0,0,0,0.1)];
+  @apply z-10 mx-auto ml-1 mt-4 max-w-[300px] rounded-lg border-0 border-solid border-primary/25 bg-primary/5 px-4 py-3 shadow-sm duration-300 lg:mt-0 lg:border lg:bg-white lg:shadow-[0_0.9rem_1.56rem_rgb(0, 0, 0, 0.1)];
 }
 
 .nav-dropdown-item {
@@ -71,14 +72,16 @@ $color-menu-open: #F2CECE;
 $cubic-bezier-linea1: cubic-bezier(0.8, 0.8, 0, 1.01);
 $duration: .8s;
 $width: 50px;
-$height:6px ;
+$height: 6px;
 $margin: 3px;
 $move-y: $height + ($margin * 2);
+
 @mixin flex-align-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 @mixin linea($width, $height) {
   width: $width;
   height: $height;
@@ -90,6 +93,7 @@ $move-y: $height + ($margin * 2);
 .menu {
   @include flex-align-center;
   flex-direction: column;
+
   .menu__tap-1,
   .menu__tap-2,
   .menu__tap-3 {
@@ -97,18 +101,22 @@ $move-y: $height + ($margin * 2);
     margin: $margin 0;
     transition: 0.5s;
   }
+
   .menu__tap-2 {
     animation: linea2-rev $duration ease;
     animation-fill-mode: forwards;
   }
+
   .menu__tap-3 {
     animation: linea3-rev $duration ease;
     animation-fill-mode: forwards;
   }
+
   .menu__tap-1 {
     animation: linea1-rev $duration ease;
     animation-fill-mode: forwards;
   }
+
   &.open .menu__tap-2 {
     animation: linea2 $duration ease;
     animation-fill-mode: forwards;
@@ -125,6 +133,7 @@ $move-y: $height + ($margin * 2);
   }
 
   &.open {
+
     .menu__tap-1,
     .menu__tap-2,
     .menu__tap-3 {
@@ -132,6 +141,7 @@ $move-y: $height + ($margin * 2);
     }
   }
 }
+
 .no-ani {
   animation: none !important;
 }
@@ -177,6 +187,7 @@ $move-y: $height + ($margin * 2);
     transform: translate3d(0, $move-y, 0) rotate(45deg);
   }
 }
+
 @keyframes linea1-rev {
   0% {
     transform: translate3d(0, $move-y, 0) rotate(45deg);
@@ -190,15 +201,18 @@ $move-y: $height + ($margin * 2);
     transform: translate3d(0, 0, 0) rotate(0);
   }
 }
+
 @keyframes linea2 {
   0% {
     opacity: 1;
     transform: scale(1);
   }
+
   40% {
     opacity: 1;
     transform: scale(1);
   }
+
   100% {
     opacity: 0;
     transform: scale(0.1);
@@ -210,10 +224,12 @@ $move-y: $height + ($margin * 2);
     opacity: 0;
     transform: scale(0.1);
   }
+
   40% {
     opacity: 0;
     transform: scale(0.1);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -223,19 +239,19 @@ $move-y: $height + ($margin * 2);
 // Fullscreen Menu Styles
 .fullscreen-menu {
   @apply fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-500 ease-in-out;
-  
+
   &.active {
     @apply translate-x-0;
   }
 
-  @media (max-width: 1024px) {
-    overflow-y: auto;
-  }
 }
 
 .fullscreen-menu__content {
-  @apply h-full flex justify-center px-6 pb-20 pt-20  md:pt-[150px];
+  @apply h-full flex justify-center;
   background-color: #403030F2;
+  padding-top: 60px;
+
+
 }
 
 .fullscreen-nav__list {
@@ -255,20 +271,52 @@ $move-y: $height + ($margin * 2);
   @apply relative;
 }
 
+.fullscreen-nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  overflow-y: auto;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    display: block;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #F2CECE;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 1024px) {
+    overflow-y: scroll;
+
+
+  }
+}
+
 .fullscreen-nav__link {
   @apply text-3xl lg:text-2xl font-medium text-white transition-colors duration-300 hover:text-[#F2CECE] block text-center;
-  
+
   &--parent {
     @apply cursor-default mb-4 lg:mb-0 text-white;
   }
-  
+
   &--child {
     @apply text-xl lg:text-lg text-[#F2CECE] cursor-pointer;
   }
-  
+
   &.active {
     @apply text-white font-semibold relative;
-    
+
     &::after {
       @apply absolute bottom-0 left-0 right-0 h-0.5 bg-[#F2CECE] content-[''] transform scale-x-100;
     }
@@ -286,9 +334,8 @@ $move-y: $height + ($margin * 2);
   list-style: none;
   margin-top: 1rem;
   max-width: none;
-  @media (min-width: 1024px) {
-    
-  }
+
+  @media (min-width: 1024px) {}
 }
 
 .fullscreen-nav__subitem {
@@ -305,7 +352,7 @@ body.menu-open {
   .fullscreen-nav__item {
     animation: slideInUp 0.6s ease-out forwards;
     opacity: 0;
-    
+
     @for $i from 1 through 10 {
       &:nth-child(#{$i}) {
         animation-delay: #{0.1 * $i}s;
@@ -319,6 +366,7 @@ body.menu-open {
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -330,19 +378,19 @@ body.menu-open {
   .fullscreen-menu__content {
     @apply pt-32;
   }
-  
+
   .fullscreen-nav__list {
     @apply gap-6;
     flex-direction: column;
   }
-  
+
   .fullscreen-nav__submenu {
     @apply gap-3;
   }
-  
+
   .fullscreen-nav__link {
     @apply text-2xl;
-    
+
     &--child {
       @apply text-lg text-[#F2CECE];
     }
@@ -350,12 +398,12 @@ body.menu-open {
 }
 
 
-#menu{
+#menu {
   position: relative;
   z-index: 1000;
 }
 
-#logo-s{
+#logo-s {
   position: relative;
   z-index: 1000;
 }
