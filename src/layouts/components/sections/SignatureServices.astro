@@ -1,0 +1,84 @@
+---
+import CardOurSignature from "../cardOurSignature.astro";
+
+const signature_services = [
+  {
+    image: "/images/home/microblading.png",
+    title: "Microblading",
+    label: "See more",
+    cta_link: "",
+    icon: "/images/home/microblading.svg",
+  },
+  {
+    image: "/images/home/powderbrows.png",
+    title: "Powder Brows",
+    label: "See more",
+    cta_link: "",
+    icon: "/images/home/eyepowder.svg",
+  },
+  {
+    image: "/images/home/eyeliner.png",
+    title: "Eye Liner",
+    label: "See more",
+    cta_link: "",
+    icon: "/images/home/eyes.svg",
+  },
+  {
+    image: "/images/home/lipblushing.png",
+    title: "Lip Blushing",
+    label: "See more",
+    cta_link: "",
+    icon: "/images/home/lips.svg",
+  },
+];
+---
+
+<section class="our-signature-services">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-16">
+        <span class="text-center flex justify-center">
+          <img
+            src="/images/home/oursignature.svg"
+            alt="Our Signature Services"
+          />
+        </span>
+        <h2 class="text-center text-white">Our Signature Services</h2>
+      </div>
+
+      <div class="col-12 mb-16">
+        <div class="our-signature-services__cards">
+          {
+            signature_services.map((item, index) => (
+              <CardOurSignature key={index} {...item} />
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="col-12 text-center">
+        <a href="#" class="btn btn-blanco-xl">
+            View All services
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .our-signature-services {
+    background-color: #27252a;
+    padding: 50px 0;
+  }
+
+  .our-signature-services__cards {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    gap-rows: 20px;
+  }
+
+  /* #FEC0C0 */
+</style>

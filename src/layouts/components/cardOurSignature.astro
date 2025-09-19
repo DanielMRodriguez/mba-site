@@ -1,0 +1,81 @@
+---
+const { image, title, label, cta_link, icon } = Astro.props;
+---
+
+<div class="our-signature-services__card">
+  <div
+    class="our-signature-services__card-background"
+    style=`background-image: url(${image})`
+  >
+  </div>
+  <div class="our-signature-services__card-background-overlay"></div>
+
+  <div class="our-signature-services__card-content">
+    <h3>
+      <img src={icon} alt="Our Signature Services" />
+      {title}
+    </h3>
+
+    <div class="our-signature-services__card-content-cta">
+      <a href={cta_link} class="btn btn-blanco">{label}</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .our-signature-services__card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .our-signature-services__card-content {
+    position: relative;
+    padding: 20px;
+    z-index: 4;
+    min-height: 220px;
+  }
+  .our-signature-services__card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  .our-signature-services__card:hover .our-signature-services__card-background {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+  .our-signature-services__card-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(254, 192, 192, 0.55);
+    z-index: 2;
+  }
+
+  .our-signature-services__card-content-cta {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 100%;
+    z-index: 3;
+  }
+  .our-signature-services__card-content h3 {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .our-signature-services__card-content h3 img {
+    width: 50px;
+  }
+</style>

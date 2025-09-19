@@ -35,8 +35,7 @@ const page_data = {
 ---
 
 <Base title={category as string}>
-  <Shape />
-  <section class="page-hero pb-8 pt-16">
+  <section class="page-hero pb-4 pt-16">
     <div class="container">
       <div class="page-hero-content mx-auto max-w-[883px] text-center">
         <PageHeader page_data={page_data} />
@@ -46,7 +45,7 @@ const page_data = {
       </div>
     </div>
   </section>
-  <section class="section">
+  <section class="pt-4">
     <div class="container">
       <BlogCategories categories={categories} />
       <Blog posts={filterByTags} />

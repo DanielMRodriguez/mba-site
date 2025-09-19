@@ -733,6 +733,48 @@ select:invalid {
   transition: all 0.3s ease;
 }
 
+.btn-blanco{
+  background-color: white;
+  color: #27252A;
+  padding: 5px 20px !important;
+  border-radius: 14px 0px 14px 0px;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  transition: all 0.3s ease;
+  font-weight: 400;
+  border: 1px solid white;
+  font-family: "Sitka Banner", serif;
+  font-weight: 600;
+}
+.btn-blanco-xl{
+  background-color: white;
+  color: #27252A;
+  border-radius: 14px 0px 14px 0px;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  transition: all 0.3s ease;
+  font-weight: 400;
+  border: 1px solid white;
+  padding: 5px 20px !important;
+  min-width: 220px;
+  font-family: "Sitka Banner", serif;
+  font-weight: 600;
+}
+.btn-blanco:hover{
+  background-color: #27252A;
+  border: 1px solid #27252A;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-blanco-xl:hover{
+  background-color: #27252A;
+  border: 1px solid #fff;
+  color: white;
+  transition: all 0.3s ease;
+}
 .color-primary {
   color: #FF715E;
 }
@@ -783,3 +825,4 @@ select:invalid {
  height: 100%;
 
 }
+

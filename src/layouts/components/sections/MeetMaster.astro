@@ -1,0 +1,69 @@
+---
+import Title from "@/layouts/components/Title.astro";
+---
+
+<section class="meet-master">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-16">
+        <Title title="Meet Master Maria Rivera" align="center" />
+      </div>
+
+      <div class="col-12 md:col-4">
+        <img
+          src="/images/home/maria-rivera-home.png"
+          alt="Meet Master Maria Rivera"
+          class="w-full rounded-xl"
+        />
+      </div>
+
+      <div class="col-12 md:col-8 pt-4">
+        <div class="pl-8">
+          <p class="text-2xl mb-16">
+            Founder of Modern Beauty ACA, Maria is a certified artist and
+            trainer with over 3,000 clients served and 100+ students trained
+            across the U.S. Her passion for empowering beauty professionals is
+            reflected in every client and course.
+          </p>
+
+          <div class="meet-master__logos">
+            <img
+              src="/images/home/ceotimeslogo.svg"
+              alt="Meet Master Maria Rivera"
+            />
+            <img
+              src="/images/home/morningus.svg"
+              alt="Meet Master Maria Rivera"
+            />
+            <img
+              src="/images/home/womens-insider-2.svg"
+              alt="Meet Master Maria Rivera"
+            />
+          </div>
+
+          <div class="text-center">
+            <a href="#" class="btn btn-primary"> View Complete </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .meet-master {
+    padding: 50px 0;
+  }
+
+  .meet-master__logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 50px;
+    gap: 50px;
+    img {
+      max-width: 100%;
+    }
+  }
+</style>
