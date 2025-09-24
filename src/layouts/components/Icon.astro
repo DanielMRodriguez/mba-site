@@ -9,12 +9,6 @@ interface Props {
 
 const { name } = Astro.props as Props;
 
-const svgContent = await import(`/images/icon/${name}.svg?raw`).then(
-  (res) => res.default
-);
-
-const processedSvg = svgContent;
-console.log("svg" , processedSvg);
 ---
 
-<Fragment set:html={processedSvg} />
+<img src={`/images/icon/${name}.svg`} alt={name} />
