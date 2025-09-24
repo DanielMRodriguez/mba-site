@@ -12,9 +12,7 @@ const { title, text, card_list, list_items, list_title, list_subtitle } =
         <h2 class="text-white mb-4 animate-slide-in-left">{title}</h2>
       </div>
       <div class="col-12 md:col-5 mb-10">
-        <p class="text-white animate-slide-in-left">
-          {text}
-        </p>
+        <div class="text-white animate-slide-in-left" set:html={text}></div>
       </div>
       <div class="col-12 md:col-7">
         <div class="course-detail__cards">

@@ -1,0 +1,108 @@
+---
+import TestimonialSlider from "@/layouts/function-components/TestimonialSlider";
+
+const testimonial_list = [
+  {
+    author: "John Doe",
+    avatar: "/images/home/home-image-1.png",
+    organization: "Company",
+    rating: 5,
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.",
+  },
+  {
+    author: "John Doe",
+    avatar: "/images/home/home-image-1.png",
+    organization: "Company",
+    rating: 5,
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.",
+  },
+  {
+    author: "John Doe",
+    avatar: "/images/home/home-image-1.png",
+    organization: "Company",
+    rating: 5,
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.",
+  },
+];
+---
+
+<section class="section testimonials-home bg-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="testimonials-home__content">
+          <!--  -->
+          <div class="testimonials-home__content-left">
+            <div class="testimonials-home__content-left-title">
+              <h4>
+                Loved by <span>75+</span> clients<br />
+                <span>4.9</span> Google Rating
+              </h4>
+            </div>
+            <!--  -->
+            <div class="testimonials-home__starts">
+              <img src="/images/home/start.svg" alt="start Rating" />
+              <img src="/images/home/start.svg" alt="start Rating" />
+              <img src="/images/home/start.svg" alt="start Rating" />
+              <img src="/images/home/start.svg" alt="start Rating" />
+              <img src="/images/home/start.svg" alt="start Rating" />
+            </div>
+          </div>
+          <!--  -->
+          <div class="testimonials-home__testimonials">
+            <TestimonialSlider list={testimonial_list} client:load />
+          </div>
+          <!--  -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-home__content {
+    display: flex;
+    gap: 20px;
+  }
+
+  .testimonials-home__content-left {
+    width: 45%;
+    display: flex;
+    gap: 20px;
+  }
+
+  .testimonials-home__content-left-title {
+    width: 50%;
+  }
+
+  .testimonials-home__content-left-title h4 {
+    font-size: 30px;
+  }
+
+  .testimonials-home__content-left-title h4 span {
+    color: #ff715e;
+  }
+
+  .testimonials-home__testimonials {
+    width: 55%;
+  }
+
+  .testimonials-home__starts {
+    width: 50%;
+    display: flex;
+    gap: 5px;
+    img {
+      width: 36px;
+      height:36px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-home__content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

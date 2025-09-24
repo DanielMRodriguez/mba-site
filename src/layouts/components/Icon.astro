@@ -10,5 +10,18 @@ interface Props {
 const { name } = Astro.props as Props;
 
 ---
+<span>
+  <img src={`/images/icon/${name}.svg`} alt={name} />
+</span>
 
-<img src={`/images/icon/${name}.svg`} alt={name} />
+
+<style>
+span{
+  color:white;
+}
+
+img{
+  width: 90px;
+  height: 90px;
+}
+</style>

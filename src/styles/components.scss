@@ -330,12 +330,22 @@ select:invalid {
 
 //review-carousel
 .review {
-  @apply mx-[0.9rem] my-16 rounded-xl bg-white px-3 py-6 pb-16 text-center shadow;
-
+  @apply mx-[0.9rem] mb-10 px-3 py-6 pb-6 text-center;
+  border: 2px solid #FF715E;
+  background-color: transparent;
+  border-radius: 14px 0px 14px 0px;
   &-author-avatar {
-    @apply mx-auto -mt-12 h-[90px] w-[90px] -translate-y-5 rounded-full p-0.5;
+    @apply mr-4 h-[50px] w-[50px] rounded-full p-0.5 overflow-hidden;
   }
 }
+.review-author{
+  @apply flex items-center mb-5;
+}
+
+.review-author-avatar img {
+  @apply h-full w-full object-cover;
+}
+
 .review-rating {
   &.five {
     svg {
@@ -391,10 +401,9 @@ select:invalid {
 //pagination style
 .reviews-carousel {
   .swiper-pagination-bullet {
-    @apply h-3.5 w-3.5 bg-[#8d8d8d];
-
+    @apply h-3.5 w-3.5;
     &-active {
-      @apply bg-primary;
+      @apply bg-[#FF715E];
     }
   }
 }
@@ -649,7 +658,7 @@ select:invalid {
     @apply h-[15px] w-[15px] border-2 border-white bg-transparent;
 
     &-active {
-      @apply bg-white;
+      
     }
   }
 }

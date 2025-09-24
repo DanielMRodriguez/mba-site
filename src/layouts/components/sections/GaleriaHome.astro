@@ -1,0 +1,52 @@
+---
+const { images = [] } = Astro.props;
+---
+
+<section class="py-3 galeria-home bg-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="galeria-home__images">
+          {
+            images.map((image) => (
+              <div class="galeria-home__image">
+                <img src={image} alt="Galeria Home" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .galeria-home__images {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    max-width: 100%;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  @media (max-width: 1000px) {
+    .galeria-home__images {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      /* centrar las imagenes */
+      justify-items: center;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .galeria-home__images {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      /* centrar las imagenes */
+      justify-items: center;
+      align-items: center;
+    }
+  }
+</style>

@@ -7,6 +7,8 @@ import HeroHome from "@/layouts/components/sections/HeroHome.astro";
 import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
 import SignatureServices from "@/layouts/components/sections/SignatureServices.astro";
 import MeetMaster from "@/layouts/components/sections/MeetMaster.astro";
+import GaleriaHome from "@/layouts/components/sections/GaleriaHome.astro";
+import TestimonialsHome from "@/layouts/components/sections/TestimonialsHome.astro";
 
 const course_banner = {
   title: "Real Results, Real Condence",
@@ -15,6 +17,14 @@ const course_banner = {
   cta_link: "",
   image_banner: "/images/home/home-banner-real.png",
 };
+
+const galeria_home = [
+  "/images/home/home-image-1.png",
+  "/images/home/home-image-2.png",
+  "/images/home/home-image-3.png",
+  "/images/home/home-image-4.png",
+  "/images/home/home-image-5.png",
+]
 
 const homepage = (await getEntry(
   "homepage",
@@ -27,6 +37,9 @@ const { banner, key_features, service, testimonial } = homepage.data;
   <HeroHome />
   <MeetMaster />
   <SignatureServices />
+  <GaleriaHome images={galeria_home} />
+  
+  <TestimonialsHome />
   <CourseBanner {...course_banner} />
   <LocationBooking />
 </Base>
