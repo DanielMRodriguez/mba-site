@@ -1,19 +1,21 @@
 ---
 import Video from "@/layouts/components/Video.astro";
 const { info } = Astro.props;
-const { title, subtitle, list, text } = info;
+const { title, subtitle = "", list = [], text = "" } = info;
 ---
 
 <section class="section course-info">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="w-full max-w-1/2 mx-auto"  set:html={text}></div>
+        <div class="w-full max-w-1/2 mx-auto" set:html={text} />
+      </div>
+      <div class="col-12">
+        <h2 class="mb-6">{title}</h2>
       </div>
       <div class="col-12 md:col-6">
-        <h2 class="mb-6">{title}</h2>
         <ul>
-          {list.map((item: String) => <li class="mb-4">{item}</li>)}
+          {list.map((item: String) => <li class="mb-4"><fragment set:html={item} /></li>)}
         </ul>
       </div>
 
@@ -37,8 +39,8 @@ const { title, subtitle, list, text } = info;
     font-size: 17px;
   }
 
-  h2{
-    color: #DE968D;
+  h2 {
+    color: #de968d;
   }
 
   .course-info-video {

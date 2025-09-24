@@ -9,19 +9,19 @@ const { title, button, image, content } = banner;
   <div class="container">
     <div class="row items-center">
       <div class="lg:col-6" data-aos="fade-right">
-        <h1 class="banner-title" set:html={markdownify(title)} data-aos="fade-up" data-aos-delay="200" />
+        <h1 class="banner-title" set:html={markdownify(title)}  />
 
-        <p class="mt-6" set:html={markdownify(content)} data-aos="fade-up" data-aos-delay="400" />
+        <p class="mt-6" set:html={markdownify(content)}  />
 
         {
           button.enable && (
-            <a class="btn btn-white mt-8" href={button.link} data-aos="fade-up" data-aos-delay="600">
+            <a class="btn btn-white mt-8" href={button.link}>
               {button.label}
             </a>
           )
         }
       </div>
-      <div class="lg:col-6" data-aos="fade-left" data-aos-delay="300">
+      <div class="lg:col-6" data-aos="fade-left">
         <Image
           class="w-full object-contain"
           alt="banner"

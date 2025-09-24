@@ -1,0 +1,144 @@
+---
+const cards = [
+  {
+    title: "Microblading training",
+    subtitle: "Basic Training",
+    image: "/images/home/microblandingtraining.png",
+    link: "/training/microblading",
+  },
+  {
+    title: "Powder Brows Training",
+    subtitle: "Basic Training",
+    image: "/images/home/powderbrowstrainning.png",
+    link: "/training/powder-brows",
+  },
+  {
+    title: "Lip Blushing Training",
+    subtitle: "Training",
+    image: "/images/home/lipblushingtraining.png",
+    link: "/training/powder-brows",
+  },
+  {
+    title: "Online Microblading Training",
+    subtitle: "Online Training",
+    image: "/images/home/onlinecourse.png",
+    link: "/training/powder-brows",
+  },
+  {
+    title: "Online Lash Lifting Training",
+    subtitle: "Online Training",
+    image: "/images/home/onlinecourse.png",
+    link: "/training/powder-brows",
+  },
+];
+---
+
+<section class="section home-training-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <span class="text-[#27252A] flex items-center gap-2">
+          <img src="/images/studie-black.svg" alt="training" /> TRAINING
+        </span>
+        <h2 class="mb-8">
+          Become a Certified Beauty Professional In <br />Spanish & English
+        </h2>
+
+        <p class="text-2xl text-center mx-auto md:max-w-[700px] mb-6">
+          Join our world-class training programs and gain hands-on experience in
+          the most in-demand techniques: Microblading, Powder Brows, Lip
+          Blushing.
+        </p>
+        <p class="text-2xl text-center mx-auto md:max-w-[700px]">
+          Learn from the best—online or in person.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="training-cards">
+    {
+      cards.map((card, index) => (
+        <div class="training-card-container animate-slide-in-up" data-delay={`${index * 0.2}s`}>
+          <div class="training-card-title mb-2">
+            <h4>{card.title}</h4>
+            <p>{card.subtitle}</p>
+          </div>
+          <div class="training-card-image mb-6">
+            <img src={card.image} alt="microblading training" />
+          </div>
+          <div class="training-card-button">
+            <a href={card.link}>Learn More</a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .home-training-section {
+    padding: 50px 0;
+    background-color: #f2cece;
+  }
+
+  .training-cards {
+    padding-top: 90px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+  }
+
+  .training-card-title {
+    display: flex;
+    flex-wrap: wrap;
+    h4 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #27252a;
+    }
+    p {
+      margin-left: auto;
+      font-size: 18px;
+      font-weight: 400;
+      color: #fff;
+      font-family: 'sitka';
+    }
+  }
+  .training-card-container {
+    width: 380px;
+  }
+
+  .training-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .training-card-button{
+    text-align: center;
+
+    a{
+
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      background-color: #27252A;
+      padding: 5px 10px;
+      border-radius: 14px 0px 14px 0px;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+    }
+
+    a:hover{
+        background-color: #fff;
+        color: #27252A;
+        border: 1px solid #27252A;
+        transition: all 0.3s ease;
+    }
+  }
+</style>

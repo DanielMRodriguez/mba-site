@@ -135,32 +135,12 @@
     {
       "name": "Lip Blushing Training",
       "url": "/training/lip-blushing"
-    },
-    {
-      "name": "Online Lash Lifting Training",
-      "url": "/training/online-lash-lifting"
-    },
-    {
-      "name": "Online Microblading Training",
-      "url": "/training/online-microblading"
     }
   ],
   "footer_help": [
     {
-      "name": "Contact",
-      "url": "/contact"
-    },
-    {
       "name": "Blog",
       "url": "/blog"
-    },
-    {
-      "name": "Privacy Policy", 
-      "url": "/privacy-policy"
-    },
-    {
-      "name": "Terms of Use",
-      "url": "/terms-of-use"
     }
   ]
 }

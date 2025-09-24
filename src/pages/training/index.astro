@@ -1,91 +1,86 @@
 ---
 import Base from "@/layouts/Base.astro";
 import Hero from "@/layouts/components/Hero.astro";
-import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
-import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
+import TrainingInfo from "@/layouts/components/sections/TrainingInfo.astro";
 import DetailTrainingSection from "@/layouts/components/sections/DetailTrainingSection.astro";
-import CourseAbout from "@/layouts/components/sections/CourseAbout.astro";
-
+import IncomePotential from "@/layouts/components/sections/IncomePotential.astro";
+import MasterRiveraTraining from "@/layouts/components/sections/MasterRiveraTraining.astro";
 const hero = {
-  title: "Touch-Up Services",
+  title: "Training Programs",
+  subtitle: "Master the Art of Permanent Makeup with Our Expert-Led Courses.",
+  image_banner: "/images/training/traininig-program.png",
+  icon: "studie",
+  cta: "Learn More",
+  cta_link: "#",
+};
+
+const training_info = {
+  text: "<p class='text-center mb-16 text-2xl'>At Modern Beauty Academy, we provide professional, hands-on training programs designed to help you master the most in-demand semi-permanent makeup techniques. Whether you are a beginner or a seasoned artist, our courses offer comprehensive theory, live demonstrations, and real model practice, ensuring you gain the knowledge and confidence to succeed.</p>",
+  title: "Why Choose Modern Beauty Academy?",
   subtitle:
-    "Maintain your perfect look with our professional touch-up sessions.  ",
-  image_banner: "/images/tramicroblading/upcomingdates.png",
-  icon: "",
-  cta: "Book Appointment",
-  cta_link: "#",
-};
-
-const course_about = {
-  title: "Why Touch-Ups Are Essential",
-  description:
-    "Over time, pigment fades and natural changes in your skin can alter the appearance of your brows, lips, or lashes. Touch-up appointments are designed to refresh color, redefine shape, and keep your results looking flawless for months or even years. We recommend scheduling touch-ups as part of your long-term beauty routine, whether it's a quick refresh or a full maintenance session ",
-  img: "/images/touch-ups/aplicacion.webp",
-};
-
-const course_banner = {
-  title: "Keep Your Look Fresh and Flawless",
-  paragraph:
-    "From brows to lips to lashes, our touch-up services ensure your beauty investment lasts. Schedule your session today and enjoy long-lasting, condent results.",
-  cta: "Book Now",
-  cta_link: "#",
-  image_banner: "/images/tramicroblading/upcomingdates.png",
-};
-const cards = [
-  {
-    title: "Classic Eyeliner",
-    description:
-      "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
-    cta: "·",
-    label: "Book Now",
-  },
-  {
-    title: "Classic Eyeliner",
-    description:
-      "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
-    cta: "·",
-    label: "Book Now",
-  },
-  {
-    title: "Classic Eyeliner",
-    description:
-      "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
-    cta: "·",
-    label: "Book Now",
-  },
-  {
-    title: "Lash Liner",
-    description:
-      "A subtle, natural look that defines the lash line without a strong outline. Ideal for those who want sparse lashes with depth and definition without the drama.",
-    cta: "·",
-    label: "Book Now",
-  },
-];
-
-const info = {
-  title: "How to Prepare for Your Appointment",
-  subtitle: "",
+    "For best results and long-lasting effects, follow these aftercare tips:",
   list: [
-    "✱ Avoid alcohol, caffeine, and blood thinners 24-48 hours prior",
-    "✱ Arrive with clean, makeup-free skin or lashes",
-    "✱ Stop using retinol, acids, and exfoliating products 1 week before",
-    "✱ For lip touch-ups, follow antiviral medication protocol if you're prone to cold sores",
-    "✱ Do not book during active skin irritation, sunburn, or infection",
+    "✱ <b>Expert Instructors:</b> Learn from industry-leading professionals with years of experience",
+    "✱ <b>Hands-On Practice:</b> Gain real-world skills through guided training with live models",
+    "✱ <b>Comprehensive Curriculum:</b> Master mapping, color theory, and advanced application techniques",
+    "✱ <b>Business Support:</b> Get marketing tips, client management, and setup guidance for success",
+    "✱ <b>Recognized Certification:</b> Earn credentials that boost your credibility and career opportunities",
+  ],
+};
+
+const detail_training_section = {
+  title: "Eyeliner Styles We Offer",
+  cards: [
+    {
+      title: "Classic Eyeliner",
+      description:
+        "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+      cta: "#",
+      label: "Book Now",
+    },
+    {
+      title: "Classic Eyeliner",
+      description:
+        "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+      cta: "#",
+      label: "Book Now",
+    },
+    {
+      title: "Classic Eyeliner",
+      description:
+        "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+      cta: "#",
+      label: "Book Now",
+    },
+    {
+      title: "Lash Liner",
+      description:
+        "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+      cta: "#",
+      label: "Book Now",
+    },
+    {
+      title: "Lash Liner",
+      description:
+        "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+      cta: "#",
+      label: "Book Now",
+    },
   ],
 };
 ---
 
 <Base>
   <Hero {...hero} />
-  <CourseAbout
-    title={course_about.title}
-    description={course_about.description}
-    image={course_about.img}
+
+  <TrainingInfo info={training_info} />
+
+  <DetailTrainingSection
+    title={detail_training_section.title}
+    cards={detail_training_section.cards}
   />
 
-  <DetailTrainingSection title="Eyeliner Styles We Offer" cards={cards} />
+  <IncomePotential />
 
-  <CourseBanner {...course_banner} />
-
-  <CourseInfo info={info} />
+  <MasterRiveraTraining />
 </Base>

@@ -9,7 +9,7 @@ import SignatureServices from "@/layouts/components/sections/SignatureServices.a
 import MeetMaster from "@/layouts/components/sections/MeetMaster.astro";
 import GaleriaHome from "@/layouts/components/sections/GaleriaHome.astro";
 import TestimonialsHome from "@/layouts/components/sections/TestimonialsHome.astro";
-
+import HomeTrainingSection from "@/layouts/components/sections/HomeTrainingSection.astro";
 const course_banner = {
   title: "Real Results, Real Condence",
   paragraph: "Our work speaks for itself. Every transformation is tailored to enhance your natural beauty with seamless, long-lasting results.",
@@ -37,9 +37,11 @@ const { banner, key_features, service, testimonial } = homepage.data;
   <HeroHome />
   <MeetMaster />
   <SignatureServices />
+  <CourseBanner {...course_banner} />
   <GaleriaHome images={galeria_home} />
   
   <TestimonialsHome />
-  <CourseBanner {...course_banner} />
+  <HomeTrainingSection />
+ 
   <LocationBooking />
 </Base>

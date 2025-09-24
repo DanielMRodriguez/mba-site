@@ -5,6 +5,7 @@ import CourseInfo from "@/layouts/components/sections/CourseInfo.astro";
 import CourseBanner from "@/layouts/components/sections/CourseBanner.astro";
 import CourseDetail from "@/layouts/components/sections/CourseDetail.astro";
 import Base from "@/layouts/Base.astro";
+import DetailTouchSection from "@/layouts/components/sections/DetailTouchSection.astro";
 
 const meta_datos = {
   title: "Touch-Up Services",
@@ -29,11 +30,11 @@ const course_about = {
 
 
 const course_banner = {
-  title: "Eyeliner Styles We Offer",
+  title: "Keep Your Look Fresh and Flawless",
   paragraph:
     "From brows to lips to lashes, our touch-up services ensure your beauty investment lasts. Schedule your session today and enjoy long-lasting, condent results.",
   cta: "Book Now",
-  cta_link: "/contact",
+  cta_link: "#",
   image_banner: "/images/touch-ups/touch-up-banner.png",
 };
 
@@ -49,6 +50,36 @@ const course_info = {
     "✱ Stop using retinol, acids, and exfoliating products 1 week before",
     "✱ For lip touch-ups, follow antiviral medication protocol if prone to cold sores",
     "✱ Do not book during active skin irritation, sunburn, or infection"
+  ],
+};
+
+const detail_training_section = {
+  title: "Eyeliner Styles We Offer",
+  cards: [
+    {
+      title: "Classic Eyeliner",
+      description: "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+      cta: "#",
+      label: "Book Now",
+    },
+    {
+      title: "Classic Eyeliner",
+      description: "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+      cta: "#",
+      label: "Book Now",
+    },
+    {
+      title: "Classic Eyeliner",
+      description: "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+      cta: "#",
+      label: "Book Now",
+    },
+    {
+      title: "Lash Liner",
+      description: "Packs color along the lash line and softly blends it above for a lifted-eye effect. Great for those who want a noticeable yet elegant look.",
+      cta: "#",
+      label: "Book Now",
+    },
   ],
 };
 
@@ -72,6 +103,11 @@ const course_info = {
     title={course_about.title}
     description={course_about.description}
     image={course_about.img}
+  />
+
+  <DetailTouchSection
+    title={detail_training_section.title}
+    cards={detail_training_section.cards}
   />
   
   <CourseBanner

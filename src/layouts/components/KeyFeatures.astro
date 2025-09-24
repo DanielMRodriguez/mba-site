@@ -16,14 +16,14 @@ const { title, description, feature_list } = key_features;
   />
   <div class="container">
     <div class="row justify-between text-center lg:text-start">
-      <div class="lg:col-5" data-aos="fade-right">
+      <div class="lg:col-5" >
         <h2 set:html={markdownify(title)} />
       </div>
-      <div class="mt-6 lg:col-5 lg:mt-0" data-aos="fade-left" data-aos-delay="200">
+      <div class="mt-6 lg:col-5 lg:mt-0" >
         <p set:html={markdownify(description)} />
       </div>
     </div>
-    <div data-aos="fade-up" data-aos-delay="400">
+    <div >
       <HomapageFeature feature_list={feature_list} client:load />
     </div>
   </div>
